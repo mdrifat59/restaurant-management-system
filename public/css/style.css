@@ -17448,3 +17448,10 @@ html[dir=rtl] .sidebar li > a .caret:before {
   font-weight: 500;
 }
 /*# sourceMappingURL=style.css.map */
+
+
+@media (min-width: 992px) {
+  .pt-160 {
+    padding-top: 160px;
+  }
+}
