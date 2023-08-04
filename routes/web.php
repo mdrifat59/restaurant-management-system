@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\EventsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,12 +20,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('front');
-<<<<<<< HEAD
 });
 Route::get('/admin', function () {
     return view('admin');
-=======
->>>>>>> 298e03fb68467e4326f42eaa80ad084edb57c815
 });
 
 Route::get('/dashboard', function () {
@@ -30,7 +30,10 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
-Route::get('/menu',[MenuController::class,'menu']);
+Route::get('/menu', [MenuController::class, 'menu']);
+Route::get('/book', [BookController::class, 'book']);
+Route::get('/about', [AboutController::class, 'about']);
+Route::get('/events', [EventsController::class, 'events']);
 
 
 Route::middleware('auth')->group(function () {
