@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\EventsController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,6 +35,7 @@ Route::get('/menu', [MenuController::class, 'menu']);
 Route::get('/book', [BookController::class, 'book']);
 Route::get('/about', [AboutController::class, 'about']);
 Route::get('/events', [EventsController::class, 'events']);
+Route::get('/order', [OrderController::class, 'order']);
 
 
 Route::middleware('auth')->group(function () {

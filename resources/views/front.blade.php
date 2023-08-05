@@ -16,6 +16,7 @@
           <div class="btns">
             <a href="#menu" class="btn-menu animated fadeInUp scrollto">Our Menu</a>
             <a href="{{ url('/book') }}" class="btn-book animated fadeInUp scrollto">Book a Table</a>
+            <a href="{{ url('/order') }}" class="btn-book animated fadeInUp scrollto">Order Now</a>
           </div>
         </div>
         <div class="col-lg-4 d-flex align-items-center d-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
