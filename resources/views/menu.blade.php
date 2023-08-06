@@ -1,5 +1,9 @@
 @extends('layouts.master')
 
+@section('title')
+  {{ __('Our Menu') }}
+@endsection
+
 <!-- ======= Menu Section ======= -->
 {{-- @include('partials.admin.header') --}}
 {{-- @include('partials.admin.sidebar') --}}

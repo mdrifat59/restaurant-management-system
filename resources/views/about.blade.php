@@ -1,5 +1,9 @@
 @extends('layouts.master')
 
+@section('title')
+  {{ __('About Us') }}
+@endsection
+
 <!-- ======= About Section ======= -->
 <section id="about" class="about">
     <div class="container" data-aos="fade-up">

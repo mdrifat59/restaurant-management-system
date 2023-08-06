@@ -1,5 +1,8 @@
 @extends('layouts.master')
 
+@section('title')
+  {{ __('Events') }}
+@endsection
 
 <!-- ======= Events Section ======= -->
 <section id="events" class="events">
