@@ -13,7 +13,7 @@
           <li><a class="nav-link scrollto" href="{{url('/menu')}}">Menu</a></li>
           <li><a class="nav-link scrollto" href="#specials">Specials</a></li>
           <li><a class="nav-link scrollto" href="{{url('/events')}}">Events</a></li>
-          <li><a class="nav-link scrollto" href="#chefs">Chefs</a></li>
+          <li><a class="nav-link scrollto" href="{{url('/chefs')}}">Chefs</a></li>
           <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
           {{-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a> --}}
             {{-- <ul>

@@ -10,4 +10,8 @@ class BookController extends Controller
     {
         return view('book_table');
     }
+    public function chefs()
+    {
+        return view('chefs');
+    }
 }
