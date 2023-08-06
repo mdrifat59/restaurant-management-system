@@ -90,12 +90,22 @@
                 <span class="nav-text">Product</span>
               </a>
             </li>
+
+
+
+            <li
+             >
+              <a class="sidenav-item-link" href="calendar.html">
+                <i class="mdi mdi-calendar-check"></i>
+                <span class="nav-text">Review</span>
+              </a>
+            </li>
           
 
           
 
           
-            <li  class="has-sub" >
+            {{-- <li  class="has-sub" >
               <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#email"
                 aria-expanded="false" aria-controls="email">
                 <i class="mdi mdi-email"></i>
@@ -143,12 +153,12 @@
                   
                 </div>
               </ul>
-            </li>
+            </li> --}}
           
 
           
 
-          
+{{--           
             <li class="section-title">
               UI Elements
             </li>
@@ -850,7 +860,7 @@
                           <span class="nav-text">Styling</span>
                           
                         </a>
-                      </li>
+                      </li> --}}
                     
                   
 
