@@ -54,6 +54,15 @@
               <span class="nav-text">Product</span>
             </a>
           </li>
+
+
+          <li
+           >
+            <a class="sidenav-item-link" href="chat.html">
+              <i class="mdi mdi-account-group"></i>
+              <span class="nav-text">User</span>
+            </a>
+          </li>
         
 
         
