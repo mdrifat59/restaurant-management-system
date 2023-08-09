@@ -233,7 +233,7 @@
 <script src="{{asset('plugins/simplebar/simplebar.min.js')}}"></script>
 <script src="https://unpkg.com/hotkeys-js/dist/hotkeys.min.js"></script>
 
-
+                  
 
 <script src="{{asset('plugins/apexcharts/apexcharts.js')}}"></script>
 
