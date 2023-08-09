@@ -13,10 +13,10 @@
 
         <div class="col-lg-4 col-md-6">
           <div class="member" data-aos="zoom-in" data-aos-delay="100">
-            <img src="{{asset('assets/img/chefs/chefs-1.jpg')}}" class="img-fluid" alt="">
+            <img src="{{asset('assets/img/chefs/habib.jpg')}}" class="img-fluid" alt="">
             <div class="member-info">
               <div class="member-info-content">
-                <h4>Walter White</h4>
+                <h4>Mohammad Habib</h4>
                 <span>Master Chef</span>
               </div>
               <div class="social">
@@ -31,10 +31,10 @@
 
         <div class="col-lg-4 col-md-6">
           <div class="member" data-aos="zoom-in" data-aos-delay="200">
-            <img src="{{asset('assets/img/chefs/chefs-2.jpg')}}" class="img-fluid" alt="">
+            <img src="{{asset('assets/img/chefs/faruk.jpg')}}" class="img-fluid" alt="">
             <div class="member-info">
               <div class="member-info-content">
-                <h4>Sarah Jhonson</h4>
+                <h4>Faruk Ahamed</h4>
                 <span>Patissier</span>
               </div>
               <div class="social">
@@ -49,10 +49,10 @@
 
         <div class="col-lg-4 col-md-6">
           <div class="member" data-aos="zoom-in" data-aos-delay="300">
-            <img src="{{asset('assets/img/chefs/chefs-3.jpg')}}" class="img-fluid" alt="">
+            <img src="{{asset('assets/img/chefs/Ashik.jpg')}}" class="img-fluid" alt="">
             <div class="member-info">
               <div class="member-info-content">
-                <h4>William Anderson</h4>
+                <h4>Ashik</h4>
                 <span>Cook</span>
               </div>
               <div class="social">
