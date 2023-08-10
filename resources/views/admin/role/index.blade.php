@@ -15,7 +15,7 @@
     </div>
 </div>
  
-<table class="table table-dark table-striped table-hover container">
+<table class="table table-light table-striped table-hover container">
   <thead>
     <tr>
       <th scope="col">SL</th>
