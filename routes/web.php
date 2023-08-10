@@ -6,6 +6,7 @@ use App\Http\Controllers\BookController;
 use App\Http\Controllers\EventsController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,9 +26,10 @@ Route::get('/', function () {
 Route::get('/admin', function () {
     return view('admin');
 });
-Route::get('/employee', function () {
-    return view('admin.employee.index');
-});
+// Route::get('/role', function () {
+//     return view('admin.role.index');
+// });
+// Route::resource('role',RoleController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -41,6 +43,9 @@ Route::get('/about', [AboutController::class, 'about']);
 Route::get('/events', [EventsController::class, 'events']);
 Route::get('/order', [OrderController::class, 'order']);
 
+route::prefix('admin')->group(function(){
+        Route::resource('roles',RoleController::class);
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

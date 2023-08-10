@@ -36,9 +36,9 @@
           
           <li
            >
-            <a class="sidenav-item-link" href="{{url('/employee')}}">
+            <a class="sidenav-item-link" href="{{url('/role')}}">
               <i class="mdi mdi-chart-line"></i>
-              <span class="nav-text"> Employee Table</span>
+              <span class="nav-text">Role</span>
             </a>
           </li>
         

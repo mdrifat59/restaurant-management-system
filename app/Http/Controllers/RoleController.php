@@ -13,6 +13,8 @@ class RoleController extends Controller
     public function index()
     {
         //
+        $roles=Role::all();
+        return view('admin.role.index',compact('roles'));
     }
 
     /**
@@ -29,6 +31,9 @@ class RoleController extends Controller
     public function store(Request $request)
     {
         //
+        // dd($request);
+        Role::create($request->all());
+        return back()->with('success', "Role Created Succussfully");
     }
 
     /**

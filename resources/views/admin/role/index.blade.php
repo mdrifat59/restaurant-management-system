@@ -7,41 +7,13 @@
 <div class="row">
     <div class="col m-5">
       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-        Add Employee
+        Role Add
       </button>
 
     </div>
 </div>
  
-<table class="table table-dark table-striped table-hover">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
-  </table>
+
 
 
     <!-- Button trigger modal -->
@@ -51,13 +23,25 @@
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
-      <form action="#" method="post">
+      <form action="{{ route('roles.store') }}" method="post">
+        @csrf
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Role Add Form</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          ...
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Role Title</label>
+            <input type="text" name="title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+           </div>
+           <div class="mb-3">
+            <label for="" class="form-label">Status</label>
+            <select name="status" class="form-select" aria-label="Default select example">
+              <option selected>Open this select menu</option>
+              <option value="1">Enable</option>
+              <option value="2">Disable</option> 
+            </select>
+           </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
