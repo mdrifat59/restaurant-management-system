@@ -36,7 +36,7 @@
           
           <li
            >
-            <a class="sidenav-item-link" href="{{url('/role')}}">
+            <a class="sidenav-item-link" href="{{route('roles.index')}}">
               <i class="mdi mdi-chart-line"></i>
               <span class="nav-text">Role</span>
             </a>

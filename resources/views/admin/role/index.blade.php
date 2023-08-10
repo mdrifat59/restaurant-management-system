@@ -4,16 +4,49 @@
 @endsection
 @section('content')
 
-<div class="row">
-    <div class="col m-5">
+<div class="row text-right d-flex justify-content-end mr-5 ">
+    <div class="col-3 mt-5 mb-5">
       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
         Role Add
-      </button>
+      </button> 
+    </div>
+    <div class="col-1">
 
     </div>
 </div>
  
-
+<table class="table table-dark table-striped table-hover container">
+  <thead>
+    <tr>
+      <th scope="col">SL</th>
+      <th scope="col">Title</th>
+      <th scope="col">Status</th>
+      <th scope="col">Created Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    @forelse ($roles as $role)
+        <tr>
+          <td scope="row">{{$loop->iteration}}</td>
+          <td>{{$role->title}}</td>
+          <td>
+            @if ($role->status ===1)
+            <span class="badge bg-success">Enable</span>
+            @elseif($role->status ===2)                  
+            <span class="badge bg-danger">Disable</span>
+            @else
+            <span class="badge bg-secondery">Pending</span>
+            @endif
+          </td>
+          <td>{{$role->created_at->diffforhumans()}}</td>
+        </tr>
+    @empty
+        <tr>
+          <td colspan="6">{{__('No Data Found')}}</td>
+        </tr>
+    @endforelse 
+  </tbody>
+</table>
 
 
     <!-- Button trigger modal -->

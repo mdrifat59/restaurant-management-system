@@ -47,7 +47,7 @@
   
   
   
-  <link href="{{asset('plugins/toaster/toastr.min.css')}}" rel="stylesheet" />
+  {{-- <link href="{{asset('plugins/toaster/toastr.min.css')}}" rel="stylesheet" /> --}}
   
   
   <!-- MONO CSS -->
@@ -77,7 +77,7 @@
   </script>
 
   
-  <div id="toaster"></div>
+  {{-- <div id="toaster"></div> --}}
   
 
   <!-- ====================================
@@ -275,7 +275,7 @@
 
 
 
-<script src="{{asset('plugins/toaster/toastr.min.js')}}"></script>
+{{-- <script src="{{asset('plugins/toaster/toastr.min.js')}}"></script> --}}
 
 
 
