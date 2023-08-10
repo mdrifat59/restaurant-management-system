@@ -19,9 +19,9 @@
             <a href="{{ url('/order') }}" class="btn-book animated fadeInUp scrollto">Order Now</a>
           </div>
         </div>
-        <div class="col-lg-4 d-flex align-items-center d-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
+        {{-- <div class="col-lg-4 d-flex align-items-center d-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
           <a href="https://www.youtube.com/watch?v=GlrxcuEDyF8" class="glightbox play-btn"></a>
-        </div>
+        </div> --}}
 
       </div>
     </div>
@@ -184,7 +184,7 @@
               <div class="testimonial-item">
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                  Guided by an unwavering passion for culinary excellence, our CEO & Founder embarked on this journey 18 years ago. With a vision to create a haven where food, warmth, and memories intertwine, their dedication has shaped Restaurantly into a timeless destination for gastronomic indulgence.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
                 <img src="{{asset('assets/img/testimonials/test1.jpg')}}" class="testimonial-img" alt="">
@@ -197,7 +197,7 @@
               <div class="testimonial-item">
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                  Our Designer, a visionary artist, has infused every corner of Restaurantly with an aesthetic that marries comfort and elegance. With a keen eye for detail, they have woven a tapestry of ambiance that elevates every dining experience, making each visit a feast for the senses.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
                 <img src="{{asset('assets/img/testimonials/test2.jpg')}}" class="testimonial-img" alt="">
@@ -210,7 +210,7 @@
               <div class="testimonial-item">
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                  At the heart of Restaurantly's success is our dedicated Store Owner. Their entrepreneurial spirit and commitment have been instrumental in nurturing our 18-year legacy. Through their leadership, we continue to flourish as a culinary institution, offering memorable experiences that reflect their profound dedication to our patrons and our craft.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
                 <img src="{{asset('assets/img/testimonials/test3.jpg')}}" class="testimonial-img" alt="">
@@ -223,7 +223,7 @@
               <div class="testimonial-item">
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                  Our invaluable Freelancer has intricately woven their expertise into Restaurantly's fabric. With their creative contributions and tireless efforts over 18 years, they have enriched our journey. Their dedication reflects in every detail, ensuring that our establishment stands as a testament to collaboration, passion, and outstanding craftsmanship.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
                 <img src="{{asset('assets/img/testimonials/test4.jpg')}}" class="testimonial-img" alt="">
@@ -236,7 +236,7 @@
               <div class="testimonial-item">
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                  At Restaurantly, our Entrepreneur's dynamic spirit fuels our 18-year culinary odyssey. Their bold vision and strategic prowess have guided us through evolving tastes and trends, resulting in a timeless dining experience. Their innovative drive continues to shape our identity as we craft new chapters in our gastronomic voyage.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
                 <img src="{{asset('assets/img/testimonials/test5.jpg')}}" class="testimonial-img" alt="">
@@ -268,64 +268,64 @@
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="{{asset('assets/img/gallery/resturant.jpg')}}" class="gallery-lightbox" data-gall="gallery-item">
-                <img src="{{asset('assets/img/gallery/resturant.jpg')}}" alt="" class="img-fluid">
+              <a href="{{asset('assets/img/gallery/rsz_rest1.jpg')}}" class="gallery-lightbox" data-gall="gallery-item">
+                <img src="{{asset('assets/img/gallery/rsz_rest1.jpg')}}" alt="" class="img-fluid">
               </a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="{{asset('assets/img/gallery/rest3.jpg')}}" class="gallery-lightbox" data-gall="gallery-item">
-                <img src="{{asset('assets/img/gallery/rest3.jpg')}}" alt="" class="img-fluid">
+              <a href="{{asset('assets/img/gallery/rsz_rest3.jpg')}}" class="gallery-lightbox" data-gall="gallery-item">
+                <img src="{{asset('assets/img/gallery/rsz_rest3.jpg')}}" alt="" class="img-fluid">
               </a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="{{asset('assets/img/gallery/rest2.jpg')}}" class="gallery-lightbox" data-gall="gallery-item">
-                <img src="{{asset('assets/img/gallery/rest2.jpg')}}" alt="" class="img-fluid">
+              <a href="{{asset('assets/img/gallery/rsz_rest2.jpg')}}" class="gallery-lightbox" data-gall="gallery-item">
+                <img src="{{asset('assets/img/gallery/rsz_rest2.jpg')}}" alt="" class="img-fluid">
               </a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="{{asset('assets/img/gallery/rest4.jpg')}}" class="gallery-lightbox" data-gall="gallery-item">
-                <img src="{{asset('assets/img/gallery/rest4.jpg')}}" alt="" class="img-fluid">
+              <a href="{{asset('assets/img/gallery/rsz_rest3.jpg')}}" class="gallery-lightbox" data-gall="gallery-item">
+                <img src="{{asset('assets/img/gallery/rsz_rest3.jpg')}}" alt="" class="img-fluid">
               </a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="{{asset('assets/img/gallery/rest-5.jpg')}}" class="gallery-lightbox" data-gall="gallery-item">
-                <img src="{{asset('assets/img/gallery/rest-5.jpg')}}" alt="" class="img-fluid">
+              <a href="{{asset('assets/img/gallery/rsz_rest2.jpg')}}" class="gallery-lightbox" data-gall="gallery-item">
+                <img src="{{asset('assets/img/gallery/rsz_rest2.jpg')}}" alt="" class="img-fluid">
               </a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="{{asset('assets/img/gallery/rest-6.jpg')}}" class="gallery-lightbox" data-gall="gallery-item">
-                <img src="{{asset('assets/img/gallery/rest-6.jpg')}}" alt="" class="img-fluid">
+              <a href="{{asset('assets/img/gallery/rsz_rest3.jpg')}}" class="gallery-lightbox" data-gall="gallery-item">
+                <img src="{{asset('assets/img/gallery/rsz_rest3.jpg')}}" alt="" class="img-fluid">
               </a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="{{asset('assets/img/gallery/rest-8.jpg')}}" class="gallery-lightbox" data-gall="gallery-item">
-                <img src="{{asset('assets/img/gallery/rest-8.jpg')}}" alt="" class="img-fluid">
+              <a href="{{asset('assets/img/gallery/rsz_rest1.jpg')}}" class="gallery-lightbox" data-gall="gallery-item">
+                <img src="{{asset('assets/img/gallery/rsz_rest1.jpg')}}" alt="" class="img-fluid">
               </a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="{{asset('assets/img/gallery/rest-8.jpg')}}" class="gallery-lightbox" data-gall="gallery-item">
-                <img src="{{asset('assets/img/gallery/rest-8.jpg')}}" alt="" class="img-fluid">
+              <a href="{{asset('assets/img/gallery/rsz_rest2.jpg')}}" class="gallery-lightbox" data-gall="gallery-item">
+                <img src="{{asset('assets/img/gallery/rsz_rest2.jpg')}}" alt="" class="img-fluid">
               </a>
             </div>
           </div>

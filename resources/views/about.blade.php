@@ -15,20 +15,23 @@
           </div>
         </div>
         <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
-          <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+          <h3> Welcome to Restaurantly - A Culinary Legacy since 2005</h3>
           <p class="fst-italic">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua.
-          </p>
-          <ul>
-            <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-            <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-            <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-          </ul>
-          <p>
-            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum
+           
+
+At Restaurantly, we take immense pride in our journey that spans over 18 glorious years of serving delectable experiences to our cherished patrons. Established in 2005, our restaurant has become a beacon of exceptional dining, where culinary artistry meets warm hospitality.
+
+Over nearly two decades, Restaurantly has evolved into a cherished destination where food connoisseurs and enthusiasts gather to indulge in a symphony of flavors that tell the story of our passion and commitment. Our unwavering dedication to providing an unforgettable dining experience has allowed us to stand the test of time and establish ourselves as a culinary institution in the heart of the community.
+
+What sets us apart is not only our sumptuous fare but also our relentless pursuit of perfection. Our chefs, with their expert craftsmanship, transform locally sourced, seasonal ingredients into masterpieces that tantalize the taste buds and ignite the senses. Every dish that leaves our kitchen is a testament to our ethos of combining tradition with innovation.
+
+As we celebrate our 18th anniversary, we extend our heartfelt gratitude to our patrons who have been an integral part of our journey. Your unwavering support and patronage have been the driving force behind our continued success. We invite both our loyal guests and new visitors to partake in the magic of Restaurantly - where each meal is a tribute to our commitment to excellence.
+
+Whether you're celebrating a special occasion, seeking a cozy dinner with loved ones, or looking for a place to unwind after a long day, Restaurantly offers an ambience that is as inviting as our dishes are tantalizing. Our seasoned staff members are dedicated to curating an experience that mirrors the warmth of home while indulging your palate with culinary delights that are anything but ordinary.
+
+Thank you for being a part of our remarkable journey. As we step into the future, we do so with an unwavering pledge to uphold the standards of excellence that have defined Restaurantly for the past 18 years. Join us in creating more memories, savoring more flavors, and continuing to build on the legacy that you, our esteemed guests, have helped us create.
+
+Here's to the next chapter of exquisite dining experiences at Restaurantly - where the art of food and the heart of hospitality converge.
           </p>
         </div>
       </div>
