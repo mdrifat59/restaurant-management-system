@@ -44,9 +44,15 @@
                 {{ __('Already registered?') }}
             </a>
 
-            <x-primary-button class="ml-4">
+            {{-- <x-primary-button class="ml-4">
                 {{ __('Register') }}
-            </x-primary-button>
+            </x-primary-button> --}}
+            <a href="{{ url('/login') }}" class="book-a-table-btn text-dark btn-book animated fadeInUp scrollto">Registration</a>
+            @if (Route::has('password.request'))
+                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
+                    {{-- {{ __('Forgot your password?') }} --}}
+                </a>
+            @endif
         </div>
     </form>
 </x-guest-layout>
