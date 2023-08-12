@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\EventsController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
@@ -45,6 +46,7 @@ Route::get('/order', [OrderController::class, 'order']);
 
 route::prefix('admin')->group(function(){
         Route::resource('roles',RoleController::class);
+        Route::resource('categorys', CategoryController::class);
 });
 
 Route::middleware('auth')->group(function () {

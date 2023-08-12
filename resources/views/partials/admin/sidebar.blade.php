@@ -49,9 +49,9 @@
         
           <li
            >
-            <a class="sidenav-item-link" href="chat.html">
+            <a class="sidenav-item-link" href="{{route('categorys.index')}}">
               <i class="mdi mdi-wechat"></i>
-              <span class="nav-text">Product</span>
+              <span class="nav-text">Categorys</span>
             </a>
           </li>
 
