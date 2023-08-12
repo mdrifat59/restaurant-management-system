@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Role;
-use Illuminate\Http\Request;
+use App\Models\Food;
+use App\Http\Requests\StoreFoodRequest;
+use App\Http\Requests\UpdateFoodRequest;
 
-class RoleController extends Controller
+class FoodController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +14,6 @@ class RoleController extends Controller
     public function index()
     {
         //
-        $roles=Role::all();
-        return view('admin.role.index',compact('roles'));
     }
 
     /**
@@ -28,18 +27,15 @@ class RoleController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreFoodRequest $request)
     {
         //
-        // dd($request);
-        Role::create($request->all());
-        return back()->with('success', "Role Created Succussfully");
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Role $role)
+    public function show(Food $food)
     {
         //
     }
@@ -47,7 +43,7 @@ class RoleController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Role $role)
+    public function edit(Food $food)
     {
         //
     }
@@ -55,7 +51,7 @@ class RoleController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Role $role)
+    public function update(UpdateFoodRequest $request, Food $food)
     {
         //
     }
@@ -63,7 +59,7 @@ class RoleController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Role $role)
+    public function destroy(Food $food)
     {
         //
     }

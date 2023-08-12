@@ -1686,7 +1686,7 @@ pre code {
 }
 
 .table-hover tbody tr:hover {
-  color: #8a909d;
+  color: #0449dd;
   background-color: rgba(0, 0, 0, 0.075);
 }
 
@@ -1813,21 +1813,22 @@ pre code {
 .table-light,
 .table-light > th,
 .table-light > td {
-  background-color: #fbfbfc;
+  background-color: #2020df;
 }
 .table-light th,
 .table-light td,
 .table-light thead th,
 .table-light tbody + tbody {
-  border-color: #f7f8fa;
+  border-color: #0e50d4;
 }
 
+
 .table-hover .table-light:hover {
-  background-color: #ececf1;
+  background-color: #1515e2;
 }
 .table-hover .table-light:hover > td,
 .table-hover .table-light:hover > th {
-  background-color: #ececf1;
+  background-color: #1212d8;
 }
 
 .table-dark,
