@@ -30,14 +30,15 @@
             <tr style="color: black">
                 <td scope="row">{{ $loop->iteration }}</td>
                 <td>{{ $food->title }}</td>
+                <td>{{ $food->price }}</td>
                 <td>
                     {{ $food->description }}
                 </td>
                 <td>{{ $food->created_at->diffforhumans() }}</td>
                 <td class="d-flex align-items-center">
-                    <a href="{{ route('food.edit', $food->id) }}"><i
+                    <a href="{{ route('foods.edit', $food->id) }}"><i
                             class="bi bi-pencil-square text-info mr-2 "></i></a> |
-                    <form action="{{ route('food.destroy', $food->id) }}" method="POST">
+                    <form action="{{ route('foods.destroy', $food->id) }}" method="POST">
                         @csrf
                         @method('delete')
                         <a href="#" onclick="del(event, this)">
@@ -66,12 +67,12 @@
             <form action="{{route('foods.store')}}" method="post">
                 @csrf
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel">SubCategory Add Form</h1>
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Food Add Form</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">SubCategory Title:</label>
+                        <label for="exampleInputEmail1" class="form-label">Food Name:</label>
                         <input type="text" name="title" class="form-control" id="exampleInputEmail1"
                             aria-describedby="emailHelp">
                     </div>
@@ -86,7 +87,7 @@
                           </select>
                     </div>
                     <div class="mb-3">
-                        <select name="cat_id" class="form-select" aria-label="Default select example">
+                        <select name="subcat_id" class="form-select" aria-label="Default select example">
                             @forelse ($subcategorys as $subcategory)
                             <option value="{{$subcategory->id}}">{{$subcategory->title}}</option>
                             @empty
@@ -94,6 +95,11 @@
                                 
                             @endforelse
                           </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Price</label>
+                        <input type="number" name="price" class="form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Description:</label> <br>
