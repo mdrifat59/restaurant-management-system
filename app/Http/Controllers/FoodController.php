@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Food;
 use App\Http\Requests\StoreFoodRequest;
 use App\Http\Requests\UpdateFoodRequest;
+use App\Models\Category;
+use App\Models\Subcategory;
 
 class FoodController extends Controller
 {
@@ -14,7 +16,10 @@ class FoodController extends Controller
     public function index()
     {
         //
-        return view('admin.food.index');
+        $categorys=Category::all();
+        $subcategorys=Subcategory::all();
+        $food=Food::all();
+        return view('admin.food.index',compact(['categorys','subcategorys','food']));
     }
 
     /**
