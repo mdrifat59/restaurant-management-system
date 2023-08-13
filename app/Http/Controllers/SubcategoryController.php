@@ -53,6 +53,7 @@ class SubcategoryController extends Controller
     public function edit(Subcategory $subcategory)
     {
         //
+        return view('admin.subcategory.edit',compact('subcategory'));
     }
 
     /**
@@ -61,6 +62,8 @@ class SubcategoryController extends Controller
     public function update(UpdateSubcategoryRequest $request, Subcategory $subcategory)
     {
         //
+        $subcategory->update($request->all());
+        return redirect()->route('subcategorys.index')->with('success','update successfull');
     }
 
     /**
@@ -69,5 +72,7 @@ class SubcategoryController extends Controller
     public function destroy(Subcategory $subcategory)
     {
         //
+         $subcategory->delete();
+         return redirect()->route('subcategorys.index')->with('success','delete complete');
     }
 }

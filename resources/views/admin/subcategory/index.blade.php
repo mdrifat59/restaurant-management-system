@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('title')
-    {{ 'category ' }}
+    {{ 'Subcategory ' }}
 @endsection
 @section('content')
     <div class="row text-right d-flex justify-content-end mr-5 ">
@@ -34,9 +34,9 @@
                     </td>
                     <td>{{ $subcategory->created_at->diffforhumans() }}</td>
                     <td class="d-flex align-items-center">
-                        <a href="{{ route('categorys.edit', $subcategory->id) }}"><i
+                        <a href="{{ route('subcategorys.edit', $subcategory->id) }}"><i
                                 class="bi bi-pencil-square text-info mr-2 "></i></a> |
-                        <form action="{{ route('categorys.destroy', $subcategory->id) }}" method="POST">
+                        <form action="{{ route('subcategorys.destroy', $subcategory->id) }}" method="POST">
                             @csrf
                             @method('delete')
                             <a href="#" onclick="del(event, this)">
