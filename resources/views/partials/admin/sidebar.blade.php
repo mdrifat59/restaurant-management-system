@@ -56,25 +56,25 @@
           </li>
 
 
+          
           <li
-           >
-            <a class="sidenav-item-link" href="chat.html">
-              <i class="mdi mdi-account-group"></i>
-              <span class="nav-text">User</span>
-            </a>
-          </li>
-        
-
-        
-
-        
-          <li
-           >
-            <a class="sidenav-item-link" href="{{route('subcategorys.index')}}">
-              <i class="mdi mdi-phone"></i>
-              <span class="nav-text">SubCategory</span>
-            </a>
-          </li>
+          >
+          <a class="sidenav-item-link" href="{{route('subcategorys.index')}}">
+            <i class="mdi mdi-phone"></i>
+            <span class="nav-text">SubCategory</span>
+          </a>
+        </li>
+          
+          
+          
+          
+        <li
+         >
+          <a class="sidenav-item-link" href="{{route('foods.index')}}">
+            <i class="mdi mdi-account-group"></i>
+            <span class="nav-text">Food</span>
+          </a>
+        </li>
         
 
         

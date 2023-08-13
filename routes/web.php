@@ -5,6 +5,7 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\EventsController;
+use App\Http\Controllers\FoodController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
@@ -49,6 +50,7 @@ route::prefix('admin')->group(function(){
         Route::resource('roles',RoleController::class);
         Route::resource('categorys', CategoryController::class);
         Route::resource('subcategorys',SubcategoryController::class);
+        Route::resource('foods',FoodController::class);
 });
 
 Route::middleware('auth')->group(function () {
