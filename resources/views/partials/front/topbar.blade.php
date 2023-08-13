@@ -9,12 +9,8 @@
 
       <div class="languages d-none d-md-flex align-items-center">
         <ul>
-          <li><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            Login
-          </button></li>
-          <li><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
-            Registration
-          </button></li>
+          <li><button type="button" class="btn rounded-pill btn btn-outline-warning custom-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">Login</button></li>
+          <li><button type="button" class="btn rounded-pill btn btn-outline-warning custom-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">Registration</button></li>
         </ul>
       </div>
     </div>
