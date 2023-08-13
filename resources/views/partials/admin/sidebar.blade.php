@@ -70,9 +70,9 @@
         
           <li
            >
-            <a class="sidenav-item-link" href="contacts.html">
+            <a class="sidenav-item-link" href="{{route('subcategorys.index')}}">
               <i class="mdi mdi-phone"></i>
-              <span class="nav-text">Online Order</span>
+              <span class="nav-text">SubCategory</span>
             </a>
           </li>
         

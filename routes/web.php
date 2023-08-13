@@ -8,6 +8,7 @@ use App\Http\Controllers\EventsController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\SubcategoryController; 
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -47,6 +48,7 @@ Route::get('/order', [OrderController::class, 'order']);
 route::prefix('admin')->group(function(){
         Route::resource('roles',RoleController::class);
         Route::resource('categorys', CategoryController::class);
+        Route::resource('subcategorys',SubcategoryController::class);
 });
 
 Route::middleware('auth')->group(function () {

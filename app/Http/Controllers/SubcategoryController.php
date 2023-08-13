@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Subcategory;
 use App\Http\Requests\StoreSubcategoryRequest;
 use App\Http\Requests\UpdateSubcategoryRequest;
+use App\Models\Category;
 
 class SubcategoryController extends Controller
 {
@@ -14,6 +15,9 @@ class SubcategoryController extends Controller
     public function index()
     {
         //
+        $subcategorys=subcategory::all();
+        $categorys=Category::all();
+        return view('admin.subcategory.index',compact(['subcategorys','categorys']));
     }
 
     /**
@@ -30,6 +34,9 @@ class SubcategoryController extends Controller
     public function store(StoreSubcategoryRequest $request)
     {
         //
+        // dd($request);
+        Subcategory::create($request->all());
+        return back()->with('successs','subcategory create successfully');
     }
 
     /**
