@@ -55,6 +55,7 @@ class FoodController extends Controller
     public function edit(Food $food)
     {
         //
+        return view('admin.food.edit',compact('food'));
     }
 
     /**
