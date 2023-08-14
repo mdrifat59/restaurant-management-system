@@ -14,4 +14,8 @@ class BookController extends Controller
     {
         return view('chefs');
     }
+    public function cart()
+    {
+        return view('cart');
+    }
 }
