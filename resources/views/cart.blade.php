@@ -53,7 +53,7 @@
                             </div>
                           </td>
                           <td class="align-middle">
-                            <p class="mb-0" style="font-weight: 500;">$9.99</p>
+                            <p class="mb-0" style="font-weight: 500;">BDT. 9.99</p>
                           </td>
                         </tr>
                         <tr>
@@ -87,7 +87,7 @@
                             </div>
                           </td>
                           <td class="align-middle border-bottom-0">
-                            <p class="mb-0" style="font-weight: 500;">$13.50</p>
+                            <p class="mb-0" style="font-weight: 500;">BDT. 13.50</p>
                           </td>
                         </tr>
                       </tbody>
@@ -98,27 +98,31 @@
                   <div class="">
                     <div class="d-flex justify-content-between" style="font-weight: 500;">
                       <p class="mb-2">Subtotal</p>
-                      <p class="mb-2">$23.49</p>
+                      <p class="mb-2">BDT. 23.49</p>
                     </div>
     
                     <div class="d-flex justify-content-between" style="font-weight: 500;">
                       <p class="mb-0">Shipping</p>
-                      <p class="mb-0">$2.99</p>
+                      <p class="mb-0">BDT. 2.99</p>
                     </div>
     
                     <hr class="my-4">
     
                     <div class="d-flex justify-content-between mb-4" style="font-weight: 500;">
                       <p class="mb-2">Total (tax included)</p>
-                      <p class="mb-2">$26.48</p>
+                      <p class="mb-2">BDT. 26.48</p>
                     </div>
     
-                    <button type="button" class="btn btn-primary btn-block btn-lg">
+                    {{-- <button type="button" class="btn btn-primary btn-block btn-lg" >
                       <div class="d-flex justify-content-between">
-                        <span>Checkout</span>
+                        <span><a href="{{url('/checkout')}}">Checkout </a> </span>
                         <span>$26.48</span>
                       </div>
-                    </button>
+                    </button> --}}
+                    <div class="text-center">
+                      <span><a href="{{url('/checkout')}}" class="btn btn-dark btn-rounded back-button">Checkout  </a></span>
+                      <span>BDT. 26.48</span>
+                    </div>
     
                   </div>
                 </div>
