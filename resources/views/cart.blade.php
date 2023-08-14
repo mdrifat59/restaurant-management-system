@@ -14,7 +14,7 @@
                 <table class="table ">
                   <thead>
                     <tr>
-                      <th scope="col" class="h5">Shopping Bag</th>
+                      <th scope="col" class="h5 ">Shopping Bag</th>
                       <th scope="col">Format</th>
                       <th scope="col">Quantity</th>
                       <th scope="col">Price</th>
