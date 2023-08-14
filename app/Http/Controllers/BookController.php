@@ -22,4 +22,8 @@ class BookController extends Controller
     {
         return view('checkout');
     }
+    public function invoice()
+    {
+        return view('invoice');
+    }
 }
