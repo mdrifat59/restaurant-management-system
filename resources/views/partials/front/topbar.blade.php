@@ -29,17 +29,21 @@
         <div class="modal-body text-dark">
   
             <div class="form-outline mb-4">
-              <label class="form-label" for="form2Example18">Name</label>
-              <input type="text" id="form2Example18" class="form-control form-control-lg" >
+              <label class="form-label" for="form2Example18">Name:</label>
+              <input type="text" id="form2Example18" name="name" class="form-control form-control-lg" >
+            </div>
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form2Example184">Phone Number:</label>
+              <input type="number" id="form2Example184" name="phone" class="form-control form-control-lg" >
             </div>
             <div class="form-outline mb-4">
               <label class="form-label" for="form2Example18">Email address</label>
-              <input type="email" id="form2Example18" class="form-control form-control-lg" >
+              <input type="email" id="form2Example18" name="email" class="form-control form-control-lg" >
             </div>
   
             <div class="form-outline mb-4">
               <label class="form-label" for="form2Example28">Password</label>
-              <input type="password" id="form2Example28" class="form-control form-control-lg" >
+              <input type="password" id="form2Example28" name="password" class="form-control form-control-lg" >
             </div> 
             <div class="form-outline mb-4">
               <label class="form-label" for="form2Example28">Re-type Password</label>
