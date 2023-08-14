@@ -77,6 +77,7 @@
                             aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3">
+                        <label for="">Choose a  Category</label>
                         <select name="cat_id" class="form-select" aria-label="Default select example">
                             @forelse ($categorys as $category)
                             <option value="{{$category->id}}">{{$category->title}}</option>
@@ -87,6 +88,7 @@
                           </select>
                     </div>
                     <div class="mb-3">
+                        <label for="">Choose a Subcategory</label>
                         <select name="subcat_id" class="form-select" aria-label="Default select example">
                             @forelse ($subcategorys as $subcategory)
                             <option value="{{$subcategory->id}}">{{$subcategory->title}}</option>
