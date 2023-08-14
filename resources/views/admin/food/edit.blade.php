@@ -16,6 +16,32 @@
                 <label class="form-label" for="form4Example1">Title</label>
               <input type="text" id="form4Example1" name="title" value="{{$food->title}}" class="form-control" />
             </div>
+            <div class="mb-3">
+                <label for="">Choose a  Category</label>
+                <select name="cat_id" class="form-select" aria-label="Default select example">
+                    @forelse ($categorys as $category)
+                    <option value="{{$category->id}}" {{$category->id === $food->cat_id ? 'selected' : ''}}>{{$category->title}}</option>
+                    @empty
+                    <option selected>NO Option here</option> 
+                        
+                    @endforelse
+                  </select>
+            </div>
+            <div class="mb-3">
+                <label for="">Choose a  SubCategory</label>
+                <select name="cat_id" class="form-select" aria-label="Default select example">
+                    @forelse ($subcategorys as $subcategory)
+                    <option value="{{$subcategory->id}}" {{$subcategory->id === $food->subcat_id ? 'selected' : ''}}>{{$subcategory->title}}</option>
+                    @empty
+                    <option selected>NO Option here</option> 
+                        
+                    @endforelse
+                  </select>
+            </div>
+            <div class="form-outline mt-5 mb-4">
+                <label class="form-label" for="form4Example1">Price</label>
+              <input type="text" id="form4Example1" name="price" value="{{$food->price}}" class="form-control" />
+            </div>
           
             <!-- Email input -->
             <div class="form-outline mb-5">
