@@ -29,6 +29,10 @@
 
   <!-- PLUGINS CSS STYLE -->
   <link href="{{asset('plugins/nprogress/nprogress.css')}}" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.0/font/bootstrap-icons.css">
+  
   
   
   
@@ -287,7 +291,7 @@
 <script src="{{asset('js/custom.js')}}"></script>
 
 
- 
+@yield('script')
                   <!--  -->
 
 

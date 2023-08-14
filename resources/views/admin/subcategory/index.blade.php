@@ -1,12 +1,12 @@
 @extends('layouts.admin')
 @section('title')
-    {{ 'category ' }}
+    {{ 'Subcategory ' }}
 @endsection
 @section('content')
     <div class="row text-right d-flex justify-content-end mr-5 ">
         <div class="col-3 mt-5 mb-5">
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                Add Category
+                Add SubCategory
             </button>
         </div>
         <div class="col-1">
@@ -25,18 +25,18 @@
             </tr>
         </thead>
         <tbody>
-            @forelse ($categorys as $category)
+            @forelse ($subcategorys as $subcategory)
                 <tr style="color: black">
                     <td scope="row">{{ $loop->iteration }}</td>
-                    <td>{{ $category->title }}</td>
+                    <td>{{ $subcategory->title }}</td>
                     <td>
-                        {{ $category->description }}
+                        {{ $subcategory->description }}
                     </td>
-                    <td>{{ $category->created_at->diffforhumans() }}</td>
+                    <td>{{ $subcategory->created_at->diffforhumans() }}</td>
                     <td class="d-flex align-items-center">
-                        <a href="{{ route('categorys.edit', $category->id) }}"><i
+                        <a href="{{ route('subcategorys.edit', $subcategory->id) }}"><i
                                 class="bi bi-pencil-square text-info mr-2 "></i></a> |
-                        <form action="{{ route('categorys.destroy', $category->id) }}" method="POST">
+                        <form action="{{ route('subcategorys.destroy', $subcategory->id) }}" method="POST">
                             @csrf
                             @method('delete')
                             <a href="#" onclick="del(event, this)">
@@ -60,19 +60,29 @@
     <!-- Modal -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered ">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <form action="{{ route('categorys.store') }}" method="post">
+                <form action="{{route('subcategorys.store')}}" method="post">
                     @csrf
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Category Add Form</h1>
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">SubCategory Add Form</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Category Title:</label>
+                            <label for="exampleInputEmail1" class="form-label">SubCategory Title:</label>
                             <input type="text" name="title" class="form-control" id="exampleInputEmail1"
                                 aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <select name="cat_id" class="form-select" aria-label="Default select example">
+                                @forelse ($categorys as $category)
+                                <option value="{{$category->id}}">{{$category->title}}</option>
+                                @empty
+                                <option selected>NO Option here</option> 
+                                    
+                                @endforelse
+                              </select>
                         </div>
                         <div class="mb-3">
                             <label for="" class="form-label">Description:</label> <br>
@@ -89,7 +99,7 @@
     </div>
 @endsection
 @section('script')
-    {{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.min.js"></script> --}}
+   
     <script>
       function del(e,t){
         e.preventDefault();
@@ -98,6 +108,5 @@
             t.closest('form').submit();
       }
     </script>
-
-    
+ 
 @endsection
