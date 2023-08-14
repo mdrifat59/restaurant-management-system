@@ -38,7 +38,7 @@ class FoodController extends Controller
     public function store(StoreFoodRequest $request)
     {
         //
-        // dd($request);
+        // dd($request); 
          Food::create($request->all());
         return back()->with('success','store successfull');
     }

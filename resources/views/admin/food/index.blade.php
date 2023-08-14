@@ -103,6 +103,10 @@
                           </select>
                     </div>
                     <div class="mb-3">
+                        <label for="formFile" class="form-label">Food Image</label>
+                        <input class="form-control" type="file" id="formFile">
+                      </div>
+                    <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Price</label>
                         <input type="number" name="price" class="form-control" id="exampleInputEmail1"
                             aria-describedby="emailHelp">
