@@ -104,7 +104,7 @@
                           <!-- Submit button -->
                           {{-- <button type="submit" class="btn btn-primary btn-rounded"
                             style="background-color: #0062CC ;">Place order</button> --}}
-                            <a href="{{url('/invoice')}}" class="btn btn-primary btn-rounded back-button">Place order</a>
+                            <a href="{{url('/invoice')}}" class="btn btn-primary  btn-rounded back-button">Place order</a>
                         </div>
               
                       </form>
