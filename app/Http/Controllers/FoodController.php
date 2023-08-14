@@ -15,11 +15,13 @@ class FoodController extends Controller
      */
     public function index()
     {
-        //
-        $categorys=Category::all();
-        $subcategorys=Subcategory::all();
-        $food=Food::all();
-        return view('admin.food.index',compact(['categorys','subcategorys','food']));
+
+        $categories = Category::all();
+        $subcategories = Subcategory::all();
+        $food=Food::with(["category","subcategory"])->get();
+        // $food=Food::all();
+        // dd($food);
+        return view('admin.food.index',compact(['food','categories','subcategories']));
     }
 
     /**
@@ -36,7 +38,7 @@ class FoodController extends Controller
     public function store(StoreFoodRequest $request)
     {
         //
-        // dd($request);
+        // dd($request); 
          Food::create($request->all());
         return back()->with('success','store successfull');
     }
@@ -55,6 +57,9 @@ class FoodController extends Controller
     public function edit(Food $food)
     {
         //
+        $categorys=Category::all();
+        $subcategorys=Subcategory::all();
+        return view('admin.food.edit',compact('food','categorys','subcategorys'));
     }
 
     /**
@@ -63,6 +68,8 @@ class FoodController extends Controller
     public function update(UpdateFoodRequest $request, Food $food)
     {
         //
+        $food->update($request->all());
+        return redirect()->route('foods.index')->with('success','update successfully');
     }
 
     /**
@@ -71,5 +78,7 @@ class FoodController extends Controller
     public function destroy(Food $food)
     {
         //
+        $food->delete();
+        return redirect()->route('foods.index')->with('success','delete complete');
     }
 }

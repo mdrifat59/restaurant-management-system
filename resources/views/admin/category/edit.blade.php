@@ -3,46 +3,7 @@
     {{('Edit-Category ')}}
 @endsection
 @section('content')
-
-{{-- <div class="row text-right d-flex justify-content-end mr-5 ">
-    <div class="col-3 mt-5 mb-5">
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-        Add Category 
-      </button> 
-    </div>
-    <div class="col-1">
-
-    </div>
-</div> --}}
  
-{{-- <table class="table table-dark table-striped table-hover container">
-  <thead>
-    <tr>
-      <th scope="col">SL</th>
-      <th scope="col">Title</th>
-      <th scope="col">Discription</th>
-      <th scope="col">Created Time</th>
-      <th scope="col">Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    @forelse ($categorys as $category)
-        <tr style="color: black">
-          <td scope="row">{{$loop->iteration}}</td>
-          <td>{{$category->title}}</td>
-          <td>
-             {{$category->description}}
-          </td>
-          <td>{{$category->created_at->diffforhumans()}}</td>
-          <td><a href="#"><i class="bi bi-pencil-square text-info mr-2"></i></a> | <a href="#"><i class="bi bi-trash text-danger ml-2"></i></a></td>
-        </tr>
-    @empty
-        <tr>
-          <td colspan="6" class="text-center">{{__('No Data Found')}}</td>
-        </tr>
-    @endforelse 
-  </tbody>
-</table> --}}
 
 
     <!-- Button trigger modal -->

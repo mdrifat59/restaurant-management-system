@@ -19,6 +19,8 @@
         <tr>
             <th scope="col">SL</th>
             <th scope="col">Title</th>
+            <th scope="col">Category</th>
+            <th scope="col">SubCategory</th>
             <th scope="col">Price</th>
             <th scope="col">Discription</th>
             <th scope="col">Created Time</th>
@@ -30,6 +32,8 @@
             <tr style="color: black">
                 <td scope="row">{{ $loop->iteration }}</td>
                 <td>{{ $food->title }}</td>
+                <td>{{ $food->category->title }}</td>
+                <td>{{ $food->subcategory->title }}</td>
                 <td>{{ $food->price }}</td>
                 <td>
                     {{ $food->description }}
@@ -79,7 +83,7 @@
                     <div class="mb-3">
                         <label for="">Choose a  Category</label>
                         <select name="cat_id" class="form-select" aria-label="Default select example">
-                            @forelse ($categorys as $category)
+                            @forelse ($categories as $category)
                             <option value="{{$category->id}}">{{$category->title}}</option>
                             @empty
                             <option selected>NO Option here</option> 
@@ -90,7 +94,7 @@
                     <div class="mb-3">
                         <label for="">Choose a Subcategory</label>
                         <select name="subcat_id" class="form-select" aria-label="Default select example">
-                            @forelse ($subcategorys as $subcategory)
+                            @forelse ($subcategories as $subcategory)
                             <option value="{{$subcategory->id}}">{{$subcategory->title}}</option>
                             @empty
                             <option selected>NO Option here</option> 
@@ -98,6 +102,10 @@
                             @endforelse
                           </select>
                     </div>
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label">Food Image</label>
+                        <input class="form-control" type="file" id="formFile">
+                      </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Price</label>
                         <input type="number" name="price" class="form-control" id="exampleInputEmail1"

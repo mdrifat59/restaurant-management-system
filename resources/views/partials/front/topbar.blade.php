@@ -1,5 +1,5 @@
 <!-- ======= Top Bar ======= -->
-<div id="topbar" class="d-flex align-items-center fixed-top">
+<div id="topbar" class="d-flex align-items-center fixed-top ">
     <div class="container d-flex justify-content-center justify-content-md-between">
 
       <div class="contact-info d-flex align-items-center">
@@ -9,8 +9,8 @@
 
       <div class="languages d-none d-md-flex align-items-center">
         <ul>
-          <li><button type="button" class="btn rounded-pill btn btn-outline-warning custom-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">Login</button></li>
-          <li><button type="button" class="btn rounded-pill btn btn-outline-warning custom-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">Registration</button></li>
+          <li><button type="button" class="btn rounded-pill btn btn-outline-warning custom-btn px-4 text-light " data-bs-toggle="modal" data-bs-target="#staticBackdrop2">Login</button></li>
+          <li><button type="button" class="btn rounded-pill btn btn-outline-warning custom-btn px-4 text-light " data-bs-toggle="modal" data-bs-target="#staticBackdrop2">Registration</button></li>
         </ul>
       </div>
     </div>
