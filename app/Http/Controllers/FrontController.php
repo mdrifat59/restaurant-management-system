@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -11,7 +12,8 @@ class FrontController extends Controller
      */
     public function index()
     {
-        return view ('front');
+        $users=User::all();
+        return view ('front',compact('users'));
     }
 
     /**
@@ -27,7 +29,8 @@ class FrontController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        User::create($request->all());
+        return back()->with("success",'registration is success');
     }
 
     /**
