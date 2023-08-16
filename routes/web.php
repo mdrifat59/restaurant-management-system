@@ -24,10 +24,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('front');
-// });
-Route::resource('/',FrontController::class);
+Route::get('/', function () {
+    return view('front');
+});
+// Route::resource('/',FrontController::class);
 
 
 Route::get('/admin', function () {

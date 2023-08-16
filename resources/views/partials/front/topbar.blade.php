@@ -21,7 +21,7 @@
   <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <form action="{{route('public.store')}}" method="post"> 
+        <form action="#" method="post"> 
           @csrf
         <div class="modal-header">
           <h1 class="modal-title fs-5 text-dark" id="staticBackdropLabel">Registration Form</h1>
