@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-<div>
+
     <div class="card">
       <div class="card-header bg-black"></div>
       <div class="card-body">
@@ -109,4 +109,5 @@
       <div class="card-footer bg-black"></div>
     </div>
   </div>
+<div>
 @endsection
