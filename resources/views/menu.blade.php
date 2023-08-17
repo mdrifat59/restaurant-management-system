@@ -59,6 +59,10 @@
                                 <span class="price text-warning">$15.99</span>
                             </div>
                             <p class="card-text">I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed</p>
+                            <div class="button-container" style="display: flex; justify-content: space-between; align-items: center">
+                                <a href="{{url('/cart')}}" type="button" class="btn btn-outline-success">Add to Cart</a>
+                                <a href="" type="button" class="btn btn-outline-success">Order</a>
+                            </div>
                         </div>
                     </div>
                 </div>
