@@ -41,7 +41,7 @@
       </nav><!-- .navbar -->
       <div class=" d-flex ">
         <a href="{{ url('/book') }}" class="book-a-table-btn scrollto d-none d-lg-flex ">Book a table</a>
-        <a href="{{ url('/order') }}" class="book-a-table-btn scrollto d-none d-lg-flex">Order Now</a>
+        <a href="{{ url('/menu') }}" class="book-a-table-btn scrollto d-none d-lg-flex">Order Now</a>
       </div>
 
     </div>
