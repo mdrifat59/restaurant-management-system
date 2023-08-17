@@ -28,13 +28,23 @@
     <div class="container mt-5">
         <h1 class="text-center" id="heading">Our Menu</h1>
         <div class="underline mb-5"></div>
-        <div class="categories text-center">
+        <div class="categories text-center mb-5">
+            <a href="#" class="btn btn-outline-warning mx-1">All</a>
+            @foreach ($categories as $category)
+              <a href="javascript:void(0)" class="btn btn-outline-warning mx-1">{{ $category->title }}</a>
+            @endforeach
+            
+            {{-- <a href="#" class="btn btn-outline-warning mx-1">Lunch</a>
+            <a href="#" class="btn btn-outline-warning mx-1">Shakes</a>
+            <a href="#" class="btn btn-outline-warning mx-1">Dinner</a> --}}
+        </div>
+        {{-- <div class="categories text-center">
             <a href="#" class="btn btn-outline-warning mx-1">All</a>
             <a href="#" class="btn btn-outline-warning mx-1">Breakfast</a>
             <a href="#" class="btn btn-outline-warning mx-1">Lunch</a>
             <a href="#" class="btn btn-outline-warning mx-1">Shakes</a>
             <a href="#" class="btn btn-outline-warning mx-1">Dinner</a>
-        </div>
+        </div> --}}
         <div class="menu-items mt-5">
             <div class="card mb-3 col-md-6" id="breakfast" style="max-width: 660px;">
                 <div class="row g-0">

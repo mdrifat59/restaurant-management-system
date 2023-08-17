@@ -27,7 +27,8 @@ background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 
                   <div class="card bg-dark text-white" style="border-radius: 1rem;">
                     <div class="card-body px-5 pt-2 pb-5">
           
-                      <form action="{{route('login')}}">
+                      <form action="{{route('login')}}" method="post">
+                        @csrf
                         <div class="mb-md-1 mt-md-4 pb-5">
           
                             <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
@@ -45,7 +46,7 @@ background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 
               
                             <!-- Checkbox -->
                             <div class="form-check d-flex justify-content-start mb-4">
-                                <input class="form-check-input" type="checkbox" value="" id="remember_me" name="remember" />
+                                <input class="form-check-input" type="checkbox" value="remember-me" id="remember_me" name="remember-me" />
                                 {{-- <label class="form-check-label" for="remember_me"> Remember password </label> --}}
                                 <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>    
                             </div>

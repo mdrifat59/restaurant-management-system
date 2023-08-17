@@ -56,7 +56,7 @@ background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244
 
                 <div class="form-outline mb-4">
                     <label class="form-label" for="form3Example4cdg">Repeat your password</label>
-                  <input type="password" id="form3Example4cdg" class="form-control form-control-lg" required autocomplete="new-password" />
+                  <input type="password" name="password_confirmation" id="form3Example4cdg" class="form-control form-control-lg" required autocomplete="new-password" />
                 </div>
 
                 <div class="d-flex justify-content-center">
