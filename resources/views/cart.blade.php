@@ -21,7 +21,7 @@
                           <th scope="col">Price</th>
                         </tr>
                       </thead>
-                      <tbody>
+                      <tbody> 
                         <tr>
                           <th scope="row">
                             <div class="d-flex align-items-center">
