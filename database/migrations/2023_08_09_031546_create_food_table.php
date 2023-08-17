@@ -18,7 +18,7 @@ return new class extends Migration
             $table->bigInteger("subcat_id")->unsigned();
             $table->foreign('subcat_id')->references('id')->on('subcategories')->onDelete("cascade");
             $table->string('title');                                 
-            $table->string('thumbnail');                                 
+            $table->string('thumbnail')->nullable();                                 
             $table->string('description');
             $table->decimal('price', 10, 2);
             $table->timestamps();
