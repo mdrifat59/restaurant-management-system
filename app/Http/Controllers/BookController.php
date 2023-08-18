@@ -16,7 +16,7 @@ class BookController extends Controller
     }
     public function cart()
     {
-        return view('cart');
+        return view('card');
     }
     public function checkout()
     {

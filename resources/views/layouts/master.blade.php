@@ -9,6 +9,7 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
     
+
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
@@ -61,9 +62,68 @@
   <script src="{{asset('assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
   <script src="{{asset('assets/vendor/php-email-form/validate.js')}}"></script>
   <script src="{{asset('assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
+  <script src="{{asset('js/cart.js')}}"></script>
+
+    <!-- jquery cnd -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <!-- Template Main JS File -->
   <script src="{{asset('assets/js/main.js')}}"></script>
+  {{-- <script>
+    $(document).ready(function () {
+      let c = new Cart();
+      // c.emptyCart();
+      console.log(c.items)
+      $("#cartbadge").attr("value", c.totalItems());
+
+      $(".addCartIcon").click(function(){ 
+        $t = $(this);
+        let i = {
+          id: $t.data("pid"),
+          name: $t.data("pname"),
+          price: $t.data("pprice"),
+          quantity: 1,
+        };
+        
+        c.addItem(i);
+        
+        talk("Item Added To Cart");
+        Swal.fire({
+position: 'top-end',
+icon: 'success',
+title: 'Item Added To Cart',
+showConfirmButton: false,
+timer: 1500
+}).then(()=>{
+          $("#cartbadge").attr("value", c.totalItems());
+          console.log(c.items);
+        });
+        
+        // console.log($(this).data('pid'));
+      });
+    });
+  </script> --}}
+
+  <script>
+    $(document).ready(function() {
+      let c = new Cart();
+      $("#cartbadge").attr("value", c.totalItems());
+      $(".addCartIcon").click(function(){ 
+        $t = $(this); 
+        let i = {
+          id: $t.data("pid"),
+          name: $t.data("pname"),
+          price: $t.data("pprice"),
+          quantity: 1,
+        };
+        c.addItem(i);
+        alert("Food add to cart");
+      });
+      $("#cartbadge").attr("value", c.totalItems());
+        console.log(c.items);
+      console.log('Workings');
+    });
+  </script>
 
   @yield('script')
 
