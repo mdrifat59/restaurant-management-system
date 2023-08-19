@@ -17,13 +17,19 @@
     <tfoot>
         <tr>
             <th colspan="3"></th>
-            <th colspan="2">
+            <th class="text-light" colspan="2">
                 Total : <span id="total"></span>
             </th>
-        </tr>
+        </tr> 
     </tfoot>
 </table>
-
+<div class="container">
+    <div class="row"> 
+        <div class="col">
+            <a href="#" class="btn btn-outline-success float-end mb-3">Proceed To Checkout</a>
+        </div> 
+    </div> 
+</div>
     
 @endsection
 
