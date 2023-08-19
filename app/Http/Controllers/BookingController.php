@@ -12,8 +12,8 @@ class BookingController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        //
+    {   $booking=Booking::all();
+        return view('book_table',compact('booking'));
     }
 
     /**
@@ -29,7 +29,8 @@ class BookingController extends Controller
      */
     public function store(StoreBookingRequest $request)
     {
-        //
+        Booking::create($request->all());
+        return back()->with('success','Booking successfull');
     }
 
     /**

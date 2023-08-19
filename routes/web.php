@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\EventsController;
 use App\Http\Controllers\FoodController; 
@@ -41,9 +42,13 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+route::prefix('front')->group(function(){
+    route::resource('booking-table',BookingController::class);
+});
+
 
 Route::get('/menu', [MenuController::class, 'menu']);
-Route::get('/book', [BookController::class, 'book']);
+// Route::get('/booking-table', [BookingController::class,'index']);
 Route::get('/chefs', [BookController::class, 'chefs']);;
 Route::get('/cart', [BookController::class, 'cart']);;
 Route::get('/checkout', [BookController::class, 'checkout']);;
