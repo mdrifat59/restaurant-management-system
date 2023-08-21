@@ -68,7 +68,7 @@
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <form action="{{route('foods.store')}}" method="post">
+            <form action="{{route('foods.store')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="staticBackdropLabel">Food Add Form</h1>
@@ -104,7 +104,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="formFile" class="form-label">Food Image</label>
-                        <input class="form-control" type="file" id="formFile">
+                        <input class="form-control" name="thumbnail" type="file" id="formFile">
                       </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Price</label>
