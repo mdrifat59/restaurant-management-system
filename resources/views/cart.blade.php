@@ -7,7 +7,7 @@
  @php
      $cart_array=cartArray()
  @endphp
- <h3>Your Cart Items</h3>
+ <h3 style="margin-top: 100px">Your Cart Items</h3>
  <div>
     <section class="h-100 h-custom">
         <div class="container h-100 py-5">
@@ -99,12 +99,16 @@
                       <p class="mb-0">Tax</p>
                       <p class="mb-0">5 %</p>
                     </div>
+                    <div class="d-flex justify-content-between" style="font-weight: 500;">
+                      <p class="mb-0">Total Tax</p>
+                      <p class="mb-0">{{Cart::getTotal()* 0.05}} &#2547</p>
+                    </div>
     
                     <hr class="my-4">
     
                     <div class="d-flex justify-content-between mb-4" style="font-weight: 500;">
                       <p class="mb-2">Total (tax included)</p>
-                      <p class="mb-2">{{Cart::getTotal()}}*0.5 &#2547</p>
+                      <p class="mb-2">{{Cart::getTotal() +(Cart::getTotal())*0.05 }} &#2547</p>
                     </div>
      
 
