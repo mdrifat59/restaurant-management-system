@@ -39,8 +39,33 @@ class FoodController extends Controller
     {
         //
         // dd($request);  
-         Food::create($request->all());
-        return back()->with('success','store successfull');
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'cat_id' => 'required|exists:categories,id',
+            'subcat_id' => 'required|exists:subcategories,id',
+            'thumbnail' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'price' => 'required|numeric',
+            'description' => 'required|string',
+        ]);
+    
+        $food = new Food;
+        $food->name = $request->name;
+        $food->cat_id = $request->cat_id;
+        $food->subcat_id = $request->subcat_id;
+        $food->price = $request->price;
+        $food->description = $request->description;
+    
+        // Handle image upload and save the file path to the model
+        if ($request->hasFile('thumbnail')) {
+            $imagePath = $request->file('thumbnail')->store('uploads', 'public');
+            $food->thumbnail = $imagePath;
+        }
+    
+        $food->save();
+    
+        return redirect()->back()->with('success', 'Food item added successfully.');
+        //  Food::create($request->all());
+        // return back()->with('success','store successfull');
     }
 
     /**

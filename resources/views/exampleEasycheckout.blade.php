@@ -1,16 +1,16 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="SSLCommerz">
-    <title>Example - EasyCheckout (Popup) | SSLCommerz</title>
+    <title>Example - EasyCheckout (Popup) | SSLCommerz</title> --}}
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    {{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> --}}
+@extends('layouts.master')
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -28,7 +28,10 @@
         }
     </style>
 </head>
-<body class="bg-light">
+<body class="bg-secondery">
+    @php
+        $cart_array=cartArray()
+    @endphp
 <div class="container">
     <div class="py-5 text-center">
         <h2>EasyCheckout (Popup) - SSLCommerz</h2>
@@ -41,17 +44,20 @@
         <div class="col-md-4 order-md-2 mb-4">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
                 <span class="text-muted">Your cart</span>
-                <span class="badge badge-secondary badge-pill">3</span>
+                <span class="badge badge-secondary badge-pill">Item : <?= count($cart_array) ?></span>
             </h4>
+            @foreach ($cart_array as $item)
+                
+            
             <ul class="list-group mb-3">
                 <li class="list-group-item d-flex justify-content-between lh-condensed">
                     <div>
-                        <h6 class="my-0">Product name</h6>
-                        <small class="text-muted">Brief description</small>
+                        <h6 class="my-0">{{$item['name']}}</h6>
+                        <small class="text-muted">Quantity: {{$item['quantity']}}</small> 
                     </div>
-                    <span class="text-muted">1000</span>
+                    <span class="text-muted">{{$item['price']}}</span>
                 </li>
-                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                {{-- <li class="list-group-item d-flex justify-content-between lh-condensed">
                     <div>
                         <h6 class="my-0">Second product</h6>
                         <small class="text-muted">Brief description</small>
@@ -64,10 +70,18 @@
                         <small class="text-muted">Brief description</small>
                     </div>
                     <span class="text-muted">150</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between">
+                </li> --}}
+                @endforeach
+                {{-- <li class="list-group-item d-flex justify-content-between">
                     <span>Total (BDT)</span>
-                    <strong>1200 TK</strong>
+                    <strong>{{Cart::getTotal()}}</strong> 
+                </li> --}}
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                    <div>
+                        <h6 class="my-0">Total (BDT)</h6>
+                        <small class="text-muted">with (5%)Tax = {{Cart::getTotal()* 0.05}}</small> 
+                    </div>
+                    <span class="text-muted">{{Cart::getTotal() +(Cart::getTotal())*0.05 }}</span>
                 </li>
             </ul>
         </div>
@@ -182,7 +196,7 @@
         </ul>
     </footer>
 </div>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+{{-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
@@ -190,29 +204,9 @@
         crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script> --}}
 
 
 <!-- If you want to use the popup integration, -->
-<script>
-    var obj = {};
-    obj.cus_name = $('#customer_name').val();
-    obj.cus_phone = $('#mobile').val();
-    obj.cus_email = $('#email').val();
-    obj.cus_addr1 = $('#address').val();
-    obj.amount = $('#total_amount').val();
 
-    $('#sslczPayBtn').prop('postdata', obj);
-
-    (function (window, document) {
-        var loader = function () {
-            var script = document.createElement("script"), tag = document.getElementsByTagName("script")[0];
-            // script.src = "https://seamless-epay.sslcommerz.com/embed.min.js?" + Math.random().toString(36).substring(7); // USE THIS FOR LIVE
-            script.src = "https://sandbox.sslcommerz.com/embed.min.js?" + Math.random().toString(36).substring(7); // USE THIS FOR SANDBOX
-            tag.parentNode.insertBefore(script, tag);
-        };
-
-        window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
-    })(window, document);
-</script>
 </html>
