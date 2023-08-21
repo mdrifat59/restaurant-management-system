@@ -4,6 +4,9 @@
  {{-- Section Start  --}}
 
  @section('content')
+ @php
+     $cart_array=cartArray()
+ @endphp
  <h3>Your Cart Items</h3>
  <div>
     <section class="h-100 h-custom">
@@ -59,13 +62,16 @@
                           </td>
                         </tr>
                         <tr> --}}
+                          @foreach ($cart_array as $cart_show)
+                              
+                         
                           <th scope="row" class="border-bottom-0">
                             <div class="d-flex align-items-center">
                               <img src="https://i.imgur.com/Oj1iQUX.webp" class="img-fluid rounded-3"
                                 style="width: 120px;" alt="Book">
                               <div class="flex-column ms-4">
-                                <p class="mb-2">Homo Deus: A Brief History of Tomorrow</p>
-                                <p class="mb-0">Yuval Noah Harari</p>
+                                <p class="mb-2">{{$cart_show['name']}}</p>
+                                {{-- <p class="mb-0">{{$cart_show['description']}}</p> --}}
                               </div>
                             </div>
                           </th>
@@ -79,8 +85,9 @@
                                 <i class="bi bi-dash btn btn-outline-info text-dark"></i>
                               </button>
           
-                              <input id="form1" min="0" name="quantity" value="1" type="number"
-                                class="form-control form-control-sm" style="width: 50px;" />
+                              {{-- <input id="form1" min="0" name="quantity" value="1" type="number"
+                                class="form-control form-control-sm" style="width: 50px;" /> --}}
+                                <div class="qty form-control form-control-sm" style="width: 50px;"><?= count($cart_array) ?></div>
           
                               <button class="btn btn-link px-2"
                                 onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
@@ -89,15 +96,16 @@
                             </div>
                           </td>
                           <td class="align-middle border-bottom-0">
-                            <p class="mb-0" style="font-weight: 500;">BDT. 13.50</p>
+                            <p class="mb-0" style="font-weight: 500;">BDT {{$cart_show['price']}}</p>
                           </td>
                         </tr>
+                         @endforeach
                       </tbody>
                       <tfoot>
                         <tr>
                           <th colspan="3"></th>
                           <th colspan="2">
-                              Total : <span id="total"></span>
+                              Total : <span id="total">{{Cart::getTotal()}}</span>
                           </th>
                       </tr>
                       </tfoot>
@@ -150,7 +158,7 @@
       </section>
  </div>
 
- <script>
+ {{-- <script>
   $(document).ready(function () {
     let c = new Cart();
     // c.emptyCart();
@@ -215,7 +223,7 @@ timer: 1500
           }
       });
   });
-</script> 
+</script>  --}}
      
  @endsection
 

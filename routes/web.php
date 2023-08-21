@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\EventsController;
 use App\Http\Controllers\FoodController; 
@@ -43,7 +44,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 route::prefix('front')->group(function(){
-    route::resource('booking-table',BookingController::class);
+    route::resource('booking-table',BookingController::class); 
 });
 
 
@@ -56,7 +57,10 @@ Route::get('/invoice', [BookController::class, 'invoice']);;
 Route::get('/about', [AboutController::class, 'about']);
 Route::get('/events', [EventsController::class, 'events']);
 Route::get('/order', [OrderController::class, 'order']);
+// add to cart
+Route::post('/add-to-cart', [CartController::class, 'add_to_cart']);
 
+// Admin panale ar kaz
 route::prefix('admin')->group(function(){
         Route::resource('roles',RoleController::class);
         Route::resource('categorys', CategoryController::class);

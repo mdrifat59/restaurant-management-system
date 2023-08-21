@@ -32,15 +32,23 @@
                                 <div class="card-body">
                                     <!-- <h5 class="card-title d-inline">Card title <span class="price">$15.99</span></h5> -->
                                     <div class="card-title">
-                                        <h5 class="d-inline">{{$food->title}}</h5>
+                                        <h5 class="d-inline">{{$food->name}}</h5>
                                         <span class="price   float-end">Price: <span class="text-danger">{{$food->price}}</span></span>
                                     </div>
                                     <p class="card-text"> {{$food->description}}</p>
                                     <div class="button-container" style="display: flex; justify-content: space-between; align-items: center">
-                                        <a href="javascript:void(0)" type="button" class="btn btn-outline-success addCartIcon"  data-pid="{{$food->id}}"
+                                        {{-- <a href="javascript:void(0)" type="button" class="btn btn-outline-success addCartIcon"  data-pid="{{$food->id}}"
                                           data-pname="{{$food->title}}"
                                           data-pprice="{{$food->price}}"
-                                          data-pamount="1"><i class="bi bi-cart3 cartbadge" id="cartbadge" value="5"></i></a>
+                                          data-pamount="1"><i class="bi bi-cart3 cartbadge" id="cartbadge" value="5"></i></a> --}}
+                                          <form action="{{url('add-to-cart')}}" method="POST">
+                                            @csrf
+                                            <div class="add-to-cart">
+                                              <input type="hidden" name="quantity" value="1">
+                                            <input type="hidden" name="id" value="{{$food->id}}">
+                                            <button class="add-to-cart-btn"><i class="bi bi-cart-check-fill"></i>Add To Cart</button>
+                                            </div>
+                                          </form>
                                         <a href="" type="button" class="btn btn-outline-success">Order</a>
                                     </div>
                                 </div>

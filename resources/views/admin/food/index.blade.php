@@ -31,7 +31,7 @@
         @forelse ($food as $food)
             <tr style="color: black">
                 <td scope="row">{{ $loop->iteration }}</td>
-                <td>{{ $food->title }}</td>
+                <td>{{ $food->name }}</td>
                 <td>{{ $food->category->title }}</td>
                 <td>{{ $food->subcategory->title }}</td>
                 <td>{{ $food->price }}</td>
@@ -77,7 +77,7 @@
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Food Name:</label>
-                        <input type="text" name="title" class="form-control" id="exampleInputEmail1"
+                        <input type="text" name="name" class="form-control" id="exampleInputEmail1"
                             aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3">
