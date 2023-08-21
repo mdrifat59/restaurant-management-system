@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Food;
 use Cart;
+use Darryldecode\Cart\Cart as CartCart;
 
 class CartController extends Controller
 {
@@ -21,6 +22,10 @@ class CartController extends Controller
         Cart::add($data);
         
         cartArray();
+        return redirect()->back();
+    }
+    public function delete($id){
+        Cart::remove($id);
         return redirect()->back();
     }
 }

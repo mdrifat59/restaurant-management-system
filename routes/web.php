@@ -59,6 +59,7 @@ Route::get('/events', [EventsController::class, 'events']);
 Route::get('/order', [OrderController::class, 'order']);
 // add to cart
 Route::post('/add-to-cart', [CartController::class, 'add_to_cart']);
+Route::get('/delete-cart/{id}', [CartController::class, 'delete']);
 
 // Admin panale ar kaz
 route::prefix('admin')->group(function(){

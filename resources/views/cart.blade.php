@@ -20,48 +20,15 @@
                       <thead>
                         <tr>
                           <th scope="col" class="h5">Shopping Bag</th>
-                          <th scope="col">Format</th>
+                          <th scope="col">Category</th>
                           <th scope="col">Quantity</th>
                           <th scope="col">Price</th>
+                          <th scope="col">SubTotal</th>
+                          <th scope="col">Action</th>
                         </tr>
                       </thead>
-                      <tbody id="data"> 
+                      <tbody id="data">  
 
-                        {{-- <tr>
-                          <th scope="row">
-                            <div class="d-flex align-items-center">
-                              <img src="https://i.imgur.com/2DsA49b.webp" class="img-fluid rounded-3"
-                                style="width: 120px;" alt="Book">
-                              <div class="flex-column ms-4">
-                                <p class="mb-2">Thinking, Fast and Slow</p>
-                                <p class="mb-0">Daniel Kahneman</p>
-                              </div>
-                            </div>
-                          </th>
-                          <td class="align-middle">
-                            <p class="mb-0" style="font-weight: 500;">Digital</p>
-                          </td>
-                          <td class="align-middle">
-                            <div class="d-flex flex-row">
-                              <button class="btn btn-link px-2 "
-                                onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                                <i class="bi bi-dash btn btn-outline-info text-dark"></i>
-                              </button>
-          
-                              <input id="form1" min="0" name="quantity" value="2" type="number"
-                                class="form-control form-control-sm" style="width: 50px;" />
-          
-                              <button class="btn btn-link px-2"
-                                onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                                <i class="bi bi-plus btn btn-outline-info text-dark"></i>
-                              </button>
-                            </div>
-                          </td>
-                          <td class="align-middle">
-                            <p class="mb-0" style="font-weight: 500;">BDT. 9.99</p>
-                          </td>
-                        </tr>
-                        <tr> --}}
                           @foreach ($cart_array as $cart_show)
                               
                          
@@ -87,7 +54,7 @@
           
                               {{-- <input id="form1" min="0" name="quantity" value="1" type="number"
                                 class="form-control form-control-sm" style="width: 50px;" /> --}}
-                                <div class="qty form-control form-control-sm" style="width: 50px;"><?= count($cart_array) ?></div>
+                                <div class="qty form-control form-control-sm" style="width: 50px;">{{$cart_show['quantity']}}</div>
           
                               <button class="btn btn-link px-2"
                                 onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
@@ -96,16 +63,24 @@
                             </div>
                           </td>
                           <td class="align-middle border-bottom-0">
-                            <p class="mb-0" style="font-weight: 500;">BDT {{$cart_show['price']}}</p>
+                            <p class="mb-0" style="font-weight: 500;"> {{$cart_show['price']}} &#2547</p>
                           </td>
+                          <td class="align-middle border-bottom-0">
+                            <p class="mb-0" style="font-weight: 500;">{{$cart_show['price']*$cart_show['quantity']}} &#2547</p>
+                          </td>
+                          <td class="align-middle border-bottom-0">
+                            <a class="mb-0 delete" href="{{url('/delete-cart/'.$cart_show['id'])}}" style="font-weight: 500;"><i class="bi bi-trash text-danger"></i> </a>
+                          </td> 
                         </tr>
                          @endforeach
                       </tbody>
                       <tfoot>
                         <tr>
-                          <th colspan="3"></th>
+                          <th colspan="3">
+                            Total Selected: <?= count($cart_array) ?>
+                          </th>
                           <th colspan="2">
-                              Total : <span id="total">{{Cart::getTotal()}}</span>
+                              Total : <span id="total">{{Cart::getTotal()}} &#2547</span>
                           </th>
                       </tr>
                       </tfoot>
@@ -113,39 +88,41 @@
                   </div>
                 </div>
                 <!-- start commit -->
-                {{-- <div class="col-3 bg-secondary">
+                <div class="col-3 bg-secondary">
                   <div class="">
                     <div class="d-flex justify-content-between" style="font-weight: 500;">
                       <p class="mb-2">Subtotal</p>
-                      <p class="mb-2">BDT. 23.49</p>
+                      <p class="mb-2">{{Cart::getTotal()}} &#2547</p>
                     </div>
     
                     <div class="d-flex justify-content-between" style="font-weight: 500;">
-                      <p class="mb-0">Shipping</p>
-                      <p class="mb-0">BDT. 2.99</p>
+                      <p class="mb-0">Tax</p>
+                      <p class="mb-0">5 %</p>
                     </div>
     
                     <hr class="my-4">
     
                     <div class="d-flex justify-content-between mb-4" style="font-weight: 500;">
                       <p class="mb-2">Total (tax included)</p>
-                      <p class="mb-2">BDT. 26.48</p>
-                    </div> --}}
-    
-                    {{-- <button type="button" class="btn btn-primary btn-block btn-lg" >
-                      <div class="d-flex justify-content-between">
-                        <span><a href="{{url('/checkout')}}">Checkout </a> </span>
-                        <span>$26.48</span>
-                      </div>
-                    </button> --}}
-                    {{-- <div class="text-center">
+                      <p class="mb-2">{{Cart::getTotal()}}*0.5 &#2547</p>
+                    </div>
+     
+
+                    <div class="d-flex justify-content-between">
+                      
+                    <div class="text-center">
+                      <span><a href="{{url('/menu')}}" class="btn btn-dark btn-rounded back-button "> Back Menu</a></span>
+                      
+                    </div>
+                    <div class="text-center">
                       <span><a href="{{url('/checkout')}}" class="btn btn-dark btn-rounded back-button">Checkout  </a></span>
-                      <span>BDT. 26.48</span>
+                      
+                    </div>
                     </div>
     
                   </div>
                 </div>
-                 --}}
+                
 
                 <!-- end commit -->
               </div>
