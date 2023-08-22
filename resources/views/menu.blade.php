@@ -26,7 +26,7 @@
                     <div class="card mb-3 item_data" id="breakfast" style="min-height: 150px;">
                         <div class="row g-0">
                             <div class="col-md-4 col-sm-12">
-                                <img src="{{ asset('storage/'.$food->thumbnail) }}" class="img-fluid rounded-start border border-warning border-2 " style="width: 100px" alt="...">
+                                <img src="{{ asset('storage/'.$food->thumbnail) }}" class="img-fluid rounded-start border border-warning border-2 " style="width: 100%; height:150px; object-fit: cover;" alt="...">
                             </div> 
                             <div class="col-md-8">
                                 <div class="card-body">

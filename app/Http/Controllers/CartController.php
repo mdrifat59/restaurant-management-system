@@ -17,6 +17,7 @@ class CartController extends Controller
         $data['id']=$food->id;
         $data['name']=$food->name;
         $data['price']=$food->price;
+        $data['thumbnail']=[$food->thumbnail];
         $data['description']=$food->description;
 
         Cart::add($data);
