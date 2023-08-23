@@ -8,10 +8,21 @@
       </div>
 
       <div class="languages d-none d-md-flex align-items-center">
+        @guest
         <ul>
           <li><a href="{{route('login')}}"><button type="button" class="btn rounded-pill btn btn-outline-warning custom-btn px-4 text-light " >Login</button></a></li>
           <li><a href="{{route('register')}}"><button type="button" class="btn rounded-pill btn btn-outline-warning custom-btn px-4 text-light " >Registration</button></a></li>
         </ul>
+        @endguest
+        @auth
+        <!-- Authentication -->
+        <form method="POST" action="{{ route('logout') }}">
+          @csrf
+
+          <a href="{{route('logout')}}" class="btn rounded-pill btn btn-outline-warning custom-btn px-4 text-light "  onclick="event.preventDefault();
+          this.closest('form').submit();" >{{ __('Log Out') }}</a>
+      </form>
+        @endauth
       </div>
     </div>
   </div>

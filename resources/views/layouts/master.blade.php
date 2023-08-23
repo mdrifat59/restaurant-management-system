@@ -31,7 +31,7 @@
 
   <!-- Template Main CSS File -->
   <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
-
+@yield('style')
   <!-- =======================================================
   * Template Name: Restaurantly - v3.1.0
   * Template URL: https://bootstrapmade.com/restaurantly-restaurant-template/

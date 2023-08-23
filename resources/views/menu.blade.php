@@ -49,7 +49,7 @@
                                             <button class="add-to-cart-btn"><i class="bi bi-cart-check-fill"></i>Add To Cart</button>
                                             </div>
                                           </form>
-                                        <a href="" type="button" class="btn btn-outline-success">Order</a>
+                                        <a href="{{url('/checkout')}}" type="button" class="btn btn-outline-success">Order</a>
                                     </div>
                                 </div>
                             </div>
