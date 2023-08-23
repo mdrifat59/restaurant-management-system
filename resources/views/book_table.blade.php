@@ -9,45 +9,40 @@
         <p>Book a Table</p>
       </div>
 
-      <form action="#" method="post" class="php-email-form"  data-aos="fade-up">
-        @csrf
+      <form action="#" method="post"  data-aos="fade-up">
+        
         <div class="row">
           <div class="col-lg-4 col-md-6 form-group">
-            <input type="text" name="title" class="form-control" id="name" placeholder="Your Name " data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-            <div class="validate"></div>
+            <input type="text" name="title" class="form-control border border-warning bg-dark text-light border-2"   placeholder="Your Name "  >
+          
           </div>
           <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
-            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
-            <div class="validate"></div>
+            <input type="email" class="form-control border border-warning bg-dark text-light border-2" name="email"  placeholder="Your Email"  >
+          
           </div>
           <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
-            <input type="text" class="form-control" name="phone" id="phone" placeholder="Your Phone" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-            <div class="validate"></div>
+            <input type="text" class="form-control border border-warning bg-dark text-light border-2" name="phone"   placeholder="Your Phone"   >
+          
           </div>
           <div class="col-lg-4 col-md-6 form-group mt-3">
-            <input type="datetime" name="date" class="form-control" id="date" placeholder="Date" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-            <div class="validate"></div>
+            <input type="datetime" name="date" class="form-control border border-warning bg-dark text-light border-2"   placeholder="Date"  >
+          
           </div>
           <div class="col-lg-4 col-md-6 form-group mt-3">
-            <input type="time" class="form-control" name="start_time" id="time" placeholder="date" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-            <div class="validate"></div>
+            <input type="time" class="form-control border border-warning bg-dark text-light border-2" name="start_time"   placeholder="date" >
+          
           </div>
           <div class="col-lg-4 col-md-6 form-group mt-3">
-            <input type="number" class="form-control" name="participant" id="people" placeholder="# of people" data-rule="minlen:1" data-msg="Please enter at least 1 chars">
-            <div class="validate"></div>
+            <input type="number" class="form-control border border-warning bg-dark text-light border-2" name="participant"   placeholder="# of people" >
+            
           </div>
         </div>
         <div class="form-group mt-3">
-          <textarea class="form-control" name="description" rows="5" placeholder="Message"></textarea>
-          <div class="validate"></div>
-        </div>
-        {{-- <div class="mb-3">
-          <div class="loading">Loading</div>
-          <div class="error-message"></div>
-          <div class="sent-message">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div>
-        </div> --}}
-        <div class="text-center"><input type="submit" class="btn " value="Book a table"></div>
-      </form>
+          <textarea class="form-control border border-warning bg-dark text-light border-2" name="description" rows="5" placeholder="Message"></textarea>
+           
+        </div> 
+        <div class="text-center mt-3"><button type="submit" class="btn border border-warning bg-success-subtle border-2"  >Book a Table</button></div>
+      </form> 
 
     </div>
   </section>
