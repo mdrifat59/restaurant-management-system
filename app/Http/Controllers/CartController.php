@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Food;
-use Cart;
-use Darryldecode\Cart\Cart as CartCart;
+
 
 class CartController extends Controller
 {
@@ -17,16 +16,20 @@ class CartController extends Controller
         $data['id']=$food->id;
         $data['name']=$food->name;
         $data['price']=$food->price;
-        $data['thumbnail']=[$food->thumbnail];
-        $data['description']=$food->description;
+        $data['attributes']=[];
+        // $data['thumbnail']=[$food->thumbnail];
+        // $data['description']=$food->description;
 
-        Cart::add($data);
+        // dd($data);
+        // Cart
+
+        \Cart::add($data);
         
-        cartArray();
+        // cartArray();
         return redirect()->back();
     }
     public function delete($id){
-        Cart::remove($id);
+        \Cart::remove($id);
         return redirect()->back();
     }
 }
