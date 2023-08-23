@@ -9,7 +9,7 @@
         <p>Book a Table</p>
       </div>
 
-      <form action="{{route('booking-table.store')}}" method="post" >
+      <form action="#" method="post" class="php-email-form"  data-aos="fade-up">
         @csrf
         <div class="row">
           <div class="col-lg-4 col-md-6 form-group">
@@ -46,7 +46,7 @@
           <div class="error-message"></div>
           <div class="sent-message">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div>
         </div> --}}
-        <div class="text-center"><button type="submit">Book a Table</button></div>
+        <div class="text-center"><input type="submit" class="btn " value="Book a table"></div>
       </form>
 
     </div>

@@ -35,7 +35,7 @@
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
       <div class=" d-flex ">
-        <a href="{{ url('/front/booking-table') }}" class="book-a-table-btn scrollto d-none d-lg-flex ">Book a table</a>
+        <a href="{{ url('/front/booking') }}" class="book-a-table-btn scrollto d-none d-lg-flex ">Book a table</a>
         <a href="{{ url('/menu') }}" class="book-a-table-btn scrollto d-none d-lg-flex">Order Now</a>
       </div>
 

@@ -45,7 +45,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 route::prefix('front')->group(function(){
-    route::resource('booking-table',BookingController::class); 
+    route::resource('booking',BookingController::class); 
 });
 
 
