@@ -82,7 +82,7 @@
         
           <li
            >
-            <a class="sidenav-item-link" href="{{url('booking_table')}}">
+            <a class="sidenav-item-link" href="{{route('booking.index')}}">
               <i class="mdi mdi-account-group"></i>
               <span class="nav-text">Table Booking</span>
             </a>

@@ -53,7 +53,7 @@ Route::get('/menu', [MenuController::class, 'menu']);
 // Route::get('/booking-table', [BookingController::class,'index']);
 Route::get('/chefs', [BookController::class, 'chefs']);;
 Route::get('/cart', [BookController::class, 'cart']);;
-Route::get('/booking_table', [BookController::class, 'book']);;
+// Route::get('/booking_table', [BookController::class, 'book']);;
 Route::get('/invoice', [BookController::class, 'invoice']);;
 Route::get('/about', [AboutController::class, 'about']);
 Route::get('/events', [EventsController::class, 'events']);

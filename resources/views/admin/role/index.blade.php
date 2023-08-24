@@ -41,7 +41,7 @@
           <td>{{$role->created_at->diffforhumans()}}</td>
         </tr>
     @empty
-        <tr>
+        <tr class="text-center">
           <td colspan="6">{{__('No Data Found')}}</td>
         </tr>
     @endforelse 
