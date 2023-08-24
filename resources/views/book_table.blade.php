@@ -12,16 +12,17 @@
       <form action="{{route('booking.store')}}" method="post">
         @csrf
         <div class="row">
+          <input type="hidden" name="user_id" value="{{isset(Auth::user()->id) ? Auth::user()->id : '' }}" id="">
           <div class="col-lg-4 col-md-6 form-group">
-            <input type="text" name="title" class="form-control border border-warning bg-dark text-light border-1"   placeholder="Your Name "  >
+            <input type="text" name="title" class="form-control border border-warning bg-dark text-light border-1" value="{{isset(Auth::user()->name) ? Auth::user()->name : '' }}"  placeholder="Your Name "  >
           
           </div>
           <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
-            <input type="email" class="form-control border border-warning bg-dark text-light border-1" name="email"  placeholder="Your Email"  >
+            <input type="email" class="form-control border border-warning bg-dark text-light border-1" name="email" value="{{isset(Auth::user()->email) ? Auth::user()->email : '' }}"  placeholder="Your Email"  >
           
           </div>
           <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
-            <input type="text" class="form-control border border-warning bg-dark text-light border-1" name="phone"   placeholder="Your Phone"   >
+            <input type="text" class="form-control border border-warning bg-dark text-light border-1" name="phone" value="{{isset(Auth::user()->phone) ? Auth::user()->phone : '' }}"  placeholder="Your Phone"   >
           
           </div>
           <div class="col-lg-4 col-md-6 form-group mt-3">
