@@ -7,6 +7,7 @@
  @php
      $cart_array=cartArray()
  @endphp
+ <div class="py-5"></div>
  <h3 style="margin-top: 100px">Your Cart Items</h3>
  <div>
     <section class="h-100 h-custom">

@@ -4,10 +4,8 @@
   {{ __('Our Menu') }}
 @endsection
 
-
-<!doctype html>
-<html lang="en">
-<body>
+<div class="py-5"></div>
+ 
     <div class="container mt-5">
         <h1 class="text-center" id="heading">Our Menu</h1>
         <div class="underline mb-5"></div>
@@ -92,7 +90,4 @@
             });
             </script> --}}
             
-        
-</body>
-
-</html>
+     

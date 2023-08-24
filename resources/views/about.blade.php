@@ -5,6 +5,7 @@
 @endsection
 
 <!-- ======= About Section ======= -->
+<div class="py-5"></div>
 <section id="about" class="about">
     <div class="container" data-aos="fade-up">
 

@@ -3,6 +3,7 @@
 @section('title')
   {{ __('Events') }}
 @endsection
+<div class="py-5"></div>
 
 <!-- ======= Events Section ======= -->
 <section id="events" class="events">
