@@ -12,8 +12,8 @@ class BookingController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {   
-        return view('admin.booking_table.index');
+    {   $booking=Booking::all();
+        return view('admin.booking_table.index',compact('booking'));
     }
 
     /**
@@ -21,8 +21,8 @@ class BookingController extends Controller
      */
     public function create()
     {
-        $booking=Booking::all();
-        return view('book_table',compact('booking'));
+        
+        return view('book_table');
     }
 
     /**
@@ -39,7 +39,7 @@ class BookingController extends Controller
      */
     public function show(Booking $booking)
     {
-        return view('admin.booking_table.index');
+         //
     }
 
     /**
@@ -47,7 +47,8 @@ class BookingController extends Controller
      */
     public function edit(Booking $booking)
     {
-        //
+        // $booking=Booking::all();
+        // return view('admin.booking_table.edit',compact('booking'));
     }
 
     /**

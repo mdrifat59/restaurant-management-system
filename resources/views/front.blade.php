@@ -15,7 +15,7 @@
 
           <div class="btns">
             <a href="{{url('/menu')}}" class="btn-menu animated fadeInUp scrollto">Our Menu</a>
-            <a href="{{ url('/front/booking') }}" class="btn-book animated fadeInUp scrollto">Book a Table</a>
+            <a href="{{ route('booking.create') }}" class="btn-book animated fadeInUp scrollto">Book a Table</a>
             <a href="{{ url('/menu') }}" class="btn-book animated fadeInUp scrollto">Order Now</a>
           </div>
         </div>

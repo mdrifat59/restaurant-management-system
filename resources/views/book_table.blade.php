@@ -1,4 +1,5 @@
 @extends('layouts.master')
+<div class="py-5"></div>
 
 <!-- ======= Book A Table Section ======= -->
 <section id="book-a-table" class="book-a-table">
