@@ -38,7 +38,7 @@ class BookingController extends Controller
      */
     public function show(Booking $booking)
     {
-        //
+        return view('admin.booking_table.index');
     }
 
     /**

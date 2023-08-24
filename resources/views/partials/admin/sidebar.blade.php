@@ -82,9 +82,9 @@
         
           <li
            >
-            <a class="sidenav-item-link" href="team.html">
+            <a class="sidenav-item-link" href="{{url('booking_table')}}">
               <i class="mdi mdi-account-group"></i>
-              <span class="nav-text">Book a Table</span>
+              <span class="nav-text">Table Booking</span>
             </a>
           </li>
         
