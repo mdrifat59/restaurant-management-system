@@ -26,4 +26,16 @@ class BookController extends Controller
     {
         return view('invoice');
     }
+    public function special()
+    {
+        return view('special');
+    }
+    public function gallery()
+    {
+        return view('gallery');
+    }
+    public function contact()
+    {
+        return view('contact');
+    }
 }
