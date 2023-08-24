@@ -48,7 +48,9 @@ class BookingController extends Controller
     public function edit(Booking $booking)
     {
         // $booking=Booking::all();
+        // dd($booking); 
         // return view('admin.booking_table.edit',compact('booking'));
+        return view('admin.booking_table.edit')->with('book',$booking);
     }
 
     /**
@@ -56,7 +58,8 @@ class BookingController extends Controller
      */
     public function update(UpdateBookingRequest $request, Booking $booking)
     {
-        //
+         $booking->update($request->all());
+        return redirect()->route('booking.index')->with('success','update successfully');
     }
 
     /**

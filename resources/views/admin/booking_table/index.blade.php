@@ -21,7 +21,7 @@
             </tr>
         </thead>
         <tbody>
-            @forelse ($booking as $book)
+            @forelse ($booking as $book) 
                 <tr style="color: black">
                     <td scope="row">{{ $loop->iteration }}</td>
                     <td>{{ $book->title}}</td>
@@ -36,7 +36,7 @@
                     <td>{{ $book->admin_massage}}</td> 
                     {{-- <td>{{ $book->created_at->diffforhumans() }}</td> --}}
                     <td class="d-flex align-items-center">
-                        <a href="{{route('booking.edit',$book->id)}}"><i
+                        <a href="{{route('booking.edit', $book->id)}}"><i
                                 class="bi bi-pencil-square text-info mr-2 "></i></a> |
                         <form action="#" method="POST">
                             @csrf
