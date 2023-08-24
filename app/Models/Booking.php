@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Booking extends Model
 {
     use HasFactory;
-    protected $fillable=['title','email','phone','date','start_time','participant','description','user_id'];
+    protected $fillable=['title','email','phone','date','start_time','participant','description','user_id','transaction_id','even_type','admin_massage'];
 
   public function user(): BelongsTo {
     return $this->belongsTo(User::class, "user_id");

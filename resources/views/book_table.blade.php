@@ -34,9 +34,23 @@
           
           </div>
           <div class="col-lg-4 col-md-6 form-group mt-3">
-            <input type="number" class="form-control border border-warning bg-dark text-light border-1" name="participant"   placeholder="# of people" >
-            
+            <input type="number" class="form-control border border-warning bg-dark text-light border-1" name="participant"   placeholder="# of people" > 
           </div>
+          <div class="sub d-flex justify-content-center">   
+          <div class="col-lg-4 col-md-6 form-group mt-3 me-4">
+            <select class="form-select border border-warning bg-dark text-light border-1" name="even_type" aria-label="Disabled select example" >
+              <option selected>Select Party-type</option>
+              <option value="General">General</option>
+              <option value="Marriage">Marriage</option>
+              <option value="Party">Party</option>
+              <option value="Birthday">Birthday</option>
+              <option value="Anniversary">Anniversary</option>
+            </select> 
+          </div>
+          <div class="col-lg-4 col-md-6 form-group mt-3 ms-4">
+            <input type="text" class="form-control border border-warning bg-dark text-light border-1" name="transaction_id"   placeholder="Transaction_id" > 
+          </div>
+        </div>
         </div>
         <div class="form-group mt-3">
           <textarea class="form-control border border-warning bg-dark text-light border-1" name="description" rows="5" placeholder="Message"></textarea>

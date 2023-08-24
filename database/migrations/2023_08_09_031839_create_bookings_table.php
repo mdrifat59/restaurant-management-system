@@ -21,8 +21,11 @@ return new class extends Migration
             $table->date('date');
             $table->time('start_time'); 
             $table->integer('participant');
-            $table->string('description')->nullable();
-            $table->string('status')->default(1);
+            $table->string('even_type');
+            $table->string('status')->default('pending');
+            $table->string('description')->nullable(); 
+            $table->string('transaction_id')->nullable();
+            $table->string('admin_massage')->nullable();
             $table->timestamps();
         });
     }
