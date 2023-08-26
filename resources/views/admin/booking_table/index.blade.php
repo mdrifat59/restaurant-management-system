@@ -32,7 +32,7 @@
                     <td>{{ $book->start_time}}</td>
                     <td>{{ $book->participant}}</td>
                     <td>{{ $book->transaction_id}}</td>
-                    <td>{{ $book->status}}</td>
+                    <td> {{ $book->status}}</td>
                     <td>{{ $book->admin_massage}}</td> 
                     {{-- <td>{{ $book->created_at->diffforhumans() }}</td> --}}
                     <td class="d-flex align-items-center">

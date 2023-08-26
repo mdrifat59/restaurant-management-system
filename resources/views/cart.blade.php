@@ -48,27 +48,39 @@
                           </td>
                           <td class="align-middle border-bottom-0">
                             <div class="d-flex flex-row">
-                              <button class="btn btn-link px-2"
+                              {{-- <button class="btn btn-link px-2"
                                 onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
                                 <i class="bi bi-dash btn btn-outline-info text-dark"></i>
-                              </button>
+                              </button> --}}
+                              <button class="btn btn-link px-2" onclick="decreaseQuantity()">
+                                <i class="bi bi-dash btn btn-outline-info text-dark"></i>
+                            </button>
+                            
+                            <div class="qty form-control form-control-sm" style="width: 50px;" id="quantityDisplay">{{$cart_show['quantity']}}</div>
+                            
+                            <button class="btn btn-link px-2" onclick="increaseQuantity()">
+                                <i class="bi bi-plus btn btn-outline-info text-dark"></i>
+                            </button>
+                          </div>
+                            {{-- <div id="priceDisplay">{{$cart_show['price']}}</div> --}}
+                            
           
                               {{-- <input id="form1" min="0" name="quantity" value="1" type="number"
                                 class="form-control form-control-sm" style="width: 50px;" /> --}}
-                                <div class="qty form-control form-control-sm" style="width: 50px;">{{$cart_show['quantity']}}</div>
+                                {{-- <div class="qty form-control form-control-sm" style="width: 50px;">{{$cart_show['quantity']}}</div>
           
                               <button class="btn btn-link px-2"
                                 onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
                                 <i class="bi bi-plus btn btn-outline-info text-dark"></i>
-                              </button>
-                            </div>
+                              </button> --}}
+                            
                           </td>
                           <td class="align-middle border-bottom-0">
-                            <p class="mb-0" style="font-weight: 500;"> {{$cart_show['price']}} &#2547</p>
+                            <p class="mb-0" style="font-weight: 500;">  {{$cart_show['price']}}</div> &#2547</p>
                           </td>
                           <td class="align-middle border-bottom-0">
-                            <p class="mb-0" style="font-weight: 500;">{{$cart_show['price']*$cart_show['quantity']}} &#2547</p>
-                          </td>
+                            <p class="mb-0" style="font-weight: 500;"><div id="priceDisplay"> {{$cart_show['price']*$cart_show['quantity']}}</div> &#2547</p>
+                          </td> 
                           <td class="align-middle border-bottom-0">
                             <a class="mb-0 delete" href="{{url('/delete-cart/'.$cart_show['id'])}}" style="font-weight: 500;"><i class="bi bi-trash text-danger"></i> </a>
                           </td> 
@@ -81,7 +93,7 @@
                             Total Selected: <?= count($cart_array) ?>
                           </th>
                           <th colspan="2">
-                              Total : <span id="total">{{Cart::getTotal()}} &#2547</span>
+                              Total : <span id="total"><div id="priceDisplay">{{Cart::getTotal()}} </div> &#2547</span>
                           </th>
                       </tr>
                       </tfoot>
@@ -139,7 +151,44 @@
         </div>
       </section>
  </div>
+ 
+ <script>
+  // JavaScript code here
 
+  let quantity = {{$cart_show['quantity']}};
+  const price = {{$cart_show['price']}};
+  const subtotalDisplay = document.getElementById('subtotalDisplay');
+  const totalDisplay = document.getElementById('totalDisplay');
+  const quantityDisplay = document.getElementById('quantityDisplay');
+  const priceDisplay = document.getElementById('priceDisplay');
+
+  function updateSubtotalAndTotal() {
+      const subtotal = (quantity * price).toFixed(2);
+      const total = (subtotal * 0.05).toFixed(2); // Adding 5% tax
+      subtotalDisplay.textContent = subtotal;
+      totalDisplay.textContent = total;
+  }
+
+  function changeQuantity(change) {
+      if (quantity + change >= 1) {
+          quantity += change;
+          quantityDisplay.textContent = quantity; // Update quantity display
+          priceDisplay.textContent = (quantity * price).toFixed(2); // Update price display
+          updateSubtotalAndTotal();
+      }
+  }
+
+  // Initialize the display
+  updateSubtotalAndTotal();
+
+  function decreaseQuantity() {
+      changeQuantity(-1);
+  }
+
+  function increaseQuantity() {
+      changeQuantity(1);
+  }
+</script>
  {{-- <script>
   $(document).ready(function () {
     let c = new Cart();

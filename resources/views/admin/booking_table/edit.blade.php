@@ -16,7 +16,7 @@
             <div class="form-outline mt-5 mb-4">
                 <label class="form-label" for="form4Example1">Status</label>
                 <select class="form-select border border-warning bg-dark text-light border-1" name="status" aria-label="Disabled select example" >
-                    <option selected>Status</option>
+                    <option >Status</option>
                     <option value="Pending">Pending</option>
                     <option value="Conform">Conform</option>
                     <option value="Cencel">Cencel</option> 
