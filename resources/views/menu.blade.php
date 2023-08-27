@@ -26,7 +26,7 @@
                       <p class="card-text"><small class="text-body-secondary">Price: {{$food->price}}</small></p>
                       <div class="button-container" style="display: flex; justify-content: space-between; align-items: center">
                         <a href="javascript:void(0)" type="button" title="add {{$food->name}} to your bag"  class="btn btn-outline-success addCartIcon"  data-pid="{{$food->id}}"
-                          data-pname="{{$food->title}}"
+                          data-pname="{{$food->name}}"
                           data-pprice="{{$food->price}}"
                           data-pamount="1"><i class="bi bi-cart3 cartbadge" id="cartbadge" value="5"></i></a>
                           {{-- <form action="{{url('add-to-cart')}}" method="POST">
