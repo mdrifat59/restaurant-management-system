@@ -29,10 +29,7 @@
             <th colspan="4"></th>
             <td>
 
-                <form action="{{url('checkout')}}" method="POST">
-                    @csrf
-                    <button class=" btn btn-outline-info">Checkout</button>
-                </form>
+                <a href="{{url('front/checkout')}}" class=" btn btn-outline-info">Checkout</a>
             </td>
         </tr>
     </tfoot>
