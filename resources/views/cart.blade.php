@@ -3,7 +3,7 @@
 @section('content')
 <div class="py-5"></div>
 <div class="py-5"></div>
-
+<div class="container">
 <h3>Your Cart Items</h3>
 <table class="table table-responsive table-striped table-hover">
     <tr>
@@ -11,6 +11,7 @@
         <th class="text-light">Product Name</th>
         <th class="text-light">Product Quantity</th>
         <th class="text-light">Product Price</th>        
+        <th class="text-light">Total Price</th>        
         <th class="text-light">Action</th>
     </tr>
     <tbody id="data">
@@ -21,12 +22,23 @@
             <th colspan="3"></th>
             <th colspan="2" class="text-light">
                 Total : <span id="total"></span>
-            </th>
+            </th> 
+            
+        </tr>
+        <tr>
+            <th colspan="4"></th>
+            <td>
+
+                <form action="{{url('checkout')}}" method="POST">
+                    @csrf
+                    <button class=" btn btn-outline-info">Checkout</button>
+                </form>
+            </td>
         </tr>
     </tfoot>
 </table>
 
-
+</div>
 @endsection
 
 @section('script')
@@ -71,14 +83,33 @@
         $items = "";
         c.items.forEach(item => {
             $items += "<tr>";
-            $items += "<td class='text-light'>"+item.id+"</td>";
-            $items += "<td class='text-light'>"+item.name+"</td>";
-            $items += "<td class='text-light'>"+item.quantity+"</td>";
-            $items += "<td class='text-light'>"+item.price+"</td>";            
-            $items += "<td class='text-light'> <a class='removeCart' data-pid='"+item.id+"'><i class='bi bi-trash'></i></a> </td>";
-            $items += "</tr>";
+                $items += "<td class='text-light'>" + item.id + "</td>";
+                $items += "<td class='text-light'>" + item.name + "</td>";
+                $items += "<td><input class='pq ' type='number' value='" + item.quantity + "'></td>";
+                $items += "<td class='pp text-light'>" + item.price + "</td>";
+                $items += "<td class='pnp text-light'>" + (item.price * item.quantity) + "</td>";
+                $items += "<td class='text-light'> <a class='removeCart' data-pid='" + item.id + "'><i class='bi bi-trash'></i></a> </td>";
+                $items += "</tr>";
         });   
         $("#data").html($items);
+        //total amount
+        function total_amount() {
+                let tm = 0;
+                $.each($(".pnp"), function(i, e) {
+                    tm += Number(e.innerHTML);
+                });
+                $("#total").html(tm);
+            }
+             //change quantity
+             $("#data").on('change', ".pq", function() {
+                let $t = $(this);
+                let q = $t.val();
+                let p = $t.parent().parent().find('.pp').html();
+                //console.log(p);
+                let pnp = q * p;
+                $(this).parent().parent().find('.pnp').html(pnp);
+                total_amount();
+            })
         $("#data").on("click",'a.removeCart',function(){
             let cart = new Cart();
             // talk("Are you sure you want to remove the item?");

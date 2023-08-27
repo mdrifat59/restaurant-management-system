@@ -53,7 +53,7 @@ Route::get('/menu', [MenuController::class, 'menu']);
 // Route::get('/booking-table', [BookingController::class,'index']);
 Route::get('/chefs', [BookController::class, 'chefs']);;
 Route::get('/cart', [BookController::class, 'cart']);;
-// Route::get('/booking_table', [BookController::class, 'book']);;
+Route::post('/checkout', [BookController::class, 'checkout']);;
 Route::get('/invoice', [BookController::class, 'invoice']);;
 Route::get('/about', [AboutController::class, 'about']);
 Route::get('/events', [EventsController::class, 'events']);
@@ -71,7 +71,7 @@ route::prefix('admin')->group(function(){
 });
 
 // SSLCOMMERZ Start
-Route::get('/checkout', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);
+Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);
 Route::get('/example2', [SslCommerzPaymentController::class, 'exampleHostedCheckout']);
 
 Route::post('/pay', [SslCommerzPaymentController::class, 'index']);
