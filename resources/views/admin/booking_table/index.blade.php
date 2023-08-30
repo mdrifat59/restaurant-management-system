@@ -2,7 +2,7 @@
 
 @section('content')
 {{-- table show --}}
-{{-- <div class="container"> --}}
+<div class="container">
     <table class="table table-dark table-striped table-hover container">
         <thead>
             <tr>

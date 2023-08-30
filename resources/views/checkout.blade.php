@@ -113,7 +113,8 @@
 <main>
   <section>
     <div class="container">
-      <form action="">
+      <form action="{{url('example1')}}" method="POST">
+        @csrf
         <div class="row my-3">
           <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7 col-xxl-7 p-2">
             <div class="card">
@@ -121,7 +122,7 @@
                 <h4 class="card-title">Checkout Form</h4>
               </div>
               <div class="card-body">
-                <fieldset>
+                {{-- <fieldset>
                   <legend>Billing Information</legend>
                   <div class="form-group my-2">
                     <label for="name1">Full Name</label>
@@ -203,7 +204,7 @@
                       </div>
                     </div>
                   </div>
-                </fieldset>
+                </fieldset> --}}
                 <hr>
                 <fieldset>
                   <legend>Shipping Information</legend>
@@ -212,9 +213,9 @@
                     <div class="input-group input-group-sm my-1">
                       <span class="input-group-text" id="inputGroup-sizing-sm">
                         <i class="fas fa-user"></i>
-                      </span>
-                      <input type="text" class="form-control" id="name2" placeholder="First Name" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required />
-                      <input type="text" class="form-control" id="name2" placeholder="Last Name" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required />
+                      </span>                                                                            
+                      <input type="text" class="form-control" id="name2" placeholder="First Name" value="{{isset(Auth::user()->name) ? Auth::user()->name : ''}}" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required />
+                      {{-- <input type="text" class="form-control" id="name2" placeholder="Last Name" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required /> --}}
                     </div>
                   </div>
                   <div class="row my-2">
@@ -225,7 +226,7 @@
                           <span class="input-group-text" id="inputGroup-sizing-sm">
                             <i class="fas fa-envelope"></i>
                           </span>
-                          <input type="email" class="form-control" id="email2" placeholder="someone@example.com" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required />
+                          <input type="email" class="form-control" id="email2" placeholder="someone@example.com" value="{{isset(Auth::user()->email) ? Auth::user()->email : ''}}" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required />
                         </div>
                       </div>
                     </div>
@@ -275,6 +276,9 @@
                         <label for="district2">District</label>
                         <select class="form-control form-control-sm d-block w-100 my-1" id="district2" required>
                           <option value="">-- Choose One --</option>
+                          <option value="6">Dhaka</option>
+                          <option value="7">Manikgange</option>
+                          <option value="8">Narayangange</option>
                         </select>
                       </div>
                     </div>
@@ -364,11 +368,11 @@
                       </td>
                     </tr>
                   </tbody>
-                </table>
+                </table> 
               </div>
             </div>
             <div class="card mt-3">
-              <div class="card-body">
+              {{-- <div class="card-body">
                 <fieldset>
                   <legend>Payment Method</legend>
                   <div class="custom-control custom-radio mt-3">
@@ -471,7 +475,7 @@
                     </div>
                   </div>
                 </fieldset>
-              </div>
+              </div> --}}
               <div class="card-footer">
                 <div class="d-grid">
                   <button type="submit" class="btn btn-outline-primary" >Place Your Order</button>

@@ -4,7 +4,7 @@
      <div class="container">
       <div class="row">
         @forelse ($food as $food)
-            <div class="col">
+            <div class="col-6">
               <div class="card mb-3" style="max-width: 540px;">
                 <div class="row g-0">
                   <div class="col-md-4">

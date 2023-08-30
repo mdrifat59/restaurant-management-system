@@ -29,7 +29,9 @@
             <th colspan="4"></th>
             <td>
 
-                <a href="{{url('front/checkout')}}" class=" btn btn-outline-info">Checkout</a>
+                {{-- <a href="{{url('front/checkout')}}" class=" btn btn-outline-info">Checkout</a> --}}
+                <button id="checkout-btn" class=" btn btn-outline-info">Checkout</button>
+                <a href="{{ route('checkout.store')}}" target="_blank" class=" btn btn-outline-info">Checkout test</a>
             </td>
         </tr>
     </tfoot>
@@ -90,6 +92,7 @@
         });   
         $("#data").html($items);
         //total amount
+        // console.log($items);
         function total_amount() {
                 let tm = 0;
                 $.each($(".pnp"), function(i, e) {
@@ -119,5 +122,28 @@
                 talk("Item removed successfully from your cart");
             }
         });
+
+        $('#checkout-btn').click(function(e) {
+            // console.log(JSON.parse(localStorage.cartItems));
+            let cartData = JSON.parse(localStorage.cartItems);
+            // console.log(localStorage.cartItems);
+            $.ajax({
+                url: "http://127.0.0.1:8000/api/hello",
+                type: "post",
+                data: {data: [...cartData]},
+                dataType: "json",
+                success: function (response) {
+                    console.log('data send success', response);
+                },
+                error: function (xhr, status, error ) {
+                    console.log('Error ', error);
+                }
+            });
+        })
     }); 
+
+
+    
+
+
 </script>

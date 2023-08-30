@@ -120,8 +120,8 @@ timer: 1500
         alert("Food add to cart");
       });
       $("#cartbadge").attr("value", c.totalItems());
-        console.log(c.items);
-      console.log('Workings');
+        // console.log(c.items);
+      // console.log('Workings');
     });
   </script>
 
