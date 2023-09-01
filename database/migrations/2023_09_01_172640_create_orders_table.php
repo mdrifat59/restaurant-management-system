@@ -13,10 +13,13 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger("user_id")->unsigned()->default(1);
-            $table->foreign('user_id')->references('id')->on('users')->onDelete("cascade");
-            $table->date('date')->nullable();
-            $table->string('status')->default('pending');
+            $table->bigInteger("user_id")->unsigned();
+            $table->foreign('user_id')->references('id')->on('users'); 
+            $table->string('billing_address');
+            $table->string('shipping_address');
+            $table->float("total",10,2);
+            $table->string('comment');
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

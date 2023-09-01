@@ -107,7 +107,11 @@ timer: 1500
   <script>
     $(document).ready(function() {
       let c = new Cart();
-      $("#cartbadge").attr("value", c.totalItems());
+
+      $("#cartbadge").html(c.totalItems());
+      // $("#cartbadge").attr("value", c.totalItems());
+
+
       $(".addCartIcon").click(function(){ 
         $t = $(this); 
         let i = {
@@ -119,7 +123,8 @@ timer: 1500
         c.addItem(i);
         alert("Food add to cart");
       });
-      $("#cartbadge").attr("value", c.totalItems());
+      $("#cartbadge").html(cart.totalItems());
+      // $("#cartbadge").attr("value", c.totalItems());
         // console.log(c.items);
       // console.log('Workings');
     });
