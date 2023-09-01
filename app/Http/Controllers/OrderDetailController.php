@@ -28,31 +28,7 @@ class OrderDetailController extends Controller
      */
     public function store(Request $request)
     {
-        if ($order) {
-            $orders = $request->input('orders', []);
-            $details = [];
-
-            foreach ($orders as $row) {
-                $menu_id = $row['menu_id'];
-                $qty = $row['qty'];
-
-
-                $details[] = [
-                    'order_id' => $order->id,
-                    'menu_id' => $menu_id,
-                    'quantity' => $qty,
-                ];
-            }
-
-
-            Order_details::insert($details);
-        }
-
-        return response()->json([
-            'status' => 'success',
-            'message' => 'Order created successfully!',
-
-        ]);
+         
     }
 
     /**
