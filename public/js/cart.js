@@ -43,6 +43,9 @@ class Cart {
     totalItems(){
         return this.items.length;
     }
+    getItems(){
+      return this.items;
+  }
     emptyCart(){
       this.items = [];
       localStorage.removeItem('cartItems');

@@ -6,6 +6,10 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>@yield('title') | {{ config('app.name') }}</title>
+      {{-- CSRF --}}
+      <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    
   <meta content="" name="description">
   <meta content="" name="keywords">
     
@@ -62,73 +66,196 @@
   <script src="{{asset('assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
   <script src="{{asset('assets/vendor/php-email-form/validate.js')}}"></script>
   <script src="{{asset('assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
-  <script src="{{asset('js/cart.js')}}"></script>
+<script src="{{asset('js/cart.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- jquery cnd -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <!-- Template Main JS File -->
   <script src="{{asset('assets/js/main.js')}}"></script>
-  {{-- <script>
-    $(document).ready(function () {
-      let c = new Cart();
-      // c.emptyCart();
-      console.log(c.items)
-      $("#cartbadge").attr("value", c.totalItems());
-
-      $(".addCartIcon").click(function(){ 
-        $t = $(this);
-        let i = {
-          id: $t.data("pid"),
-          name: $t.data("pname"),
-          price: $t.data("pprice"),
-          quantity: 1,
-        };
-        
-        c.addItem(i);
-        
-        talk("Item Added To Cart");
-        Swal.fire({
-position: 'top-end',
-icon: 'success',
-title: 'Item Added To Cart',
-showConfirmButton: false,
-timer: 1500
-}).then(()=>{
-          $("#cartbadge").attr("value", c.totalItems());
-          console.log(c.items);
-        });
-        
-        // console.log($(this).data('pid'));
-      });
-    });
-  </script> --}}
 
   <script>
     $(document).ready(function() {
-      let c = new Cart();
-
-      $("#cartbadge").html(c.totalItems());
-      // $("#cartbadge").attr("value", c.totalItems());
-
-
-      $(".addCartIcon").click(function(){ 
-        $t = $(this); 
-        let i = {
-          id: $t.data("pid"),
-          name: $t.data("pname"),
-          price: $t.data("pprice"),
-          quantity: 1,
-        };
-        c.addItem(i);
-        alert("Food add to cart");
-      });
-      $("#cartbadge").html(cart.totalItems());
-      // $("#cartbadge").attr("value", c.totalItems());
-        // console.log(c.items);
-      // console.log('Workings');
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
     });
-  </script>
+</script>
+
+
+
+
+<script>
+   var cart = new Cart();
+$(document).ready(function(){
+
+$("#cartbadge").html(cart.totalItems());
+
+
+
+$(".addCartIcon").click(function(){ 
+  $t = $(this); 
+  let i = {
+    id: $t.data("pid"),
+    name: $t.data("pname"),
+    price: $t.data("pprice"),
+    quantity: 1,
+  };
+  cart.addItem(i);
+  alert("Food add to cart");
+});
+$("#cartbadge").html(cart.totalItems());
+
+
+ 
+  let total = cart.getTotalPrice();
+    $("#total").html(total); 
+    $items = "";
+    cart.items.forEach(item => {
+        $items += "<tr>";
+            $items += "<td class='text-light'>" + item.id + "</td>";
+            $items += "<td class='text-light'>" + item.name + "</td>";
+            $items += "<td><input class='pq ' type='number' value='" + item.quantity + "'></td>";
+            $items += "<td class='pp text-light'>" + item.price + "</td>";
+            $items += "<td class='pnp text-light'>" + (item.price * item.quantity) + "</td>";
+            $items += "<td class='text-light'> <a class='removeCart' data-pid='" + item.id + "'><i class='bi bi-trash'></i></a> </td>";
+            $items += "</tr>";
+    });   
+    $("#data").html($items);
+    
+    function total_amount() {
+            let tm = 0;
+            $.each($(".pnp"), function(i, e) {
+                tm += Number(e.innerHTML);
+            });
+            $("#total").html(tm);
+        }
+         //change quantity
+         $("#data").on('change', ".pq", function() {
+            let $t = $(this);
+            let q = $t.val();
+            let p = $t.parent().parent().find('.pp').html();
+            //console.log(p);
+            let pnp = q * p;
+            $(this).parent().parent().find('.pnp').html(pnp);
+            total_amount();
+        })
+    $("#data").on("click",'a.removeCart',function(){
+        let cart = new Cart();
+       
+        let c = confirm("Are you sure you want to remove");
+        if(c){
+            let pid = $(this).data("pid");
+            cart.removeItem(pid);
+            $(this).parent().parent().remove();
+            $("#total").html(cart.getTotalPrice());
+            talk("Item removed successfully from your cart");
+        }
+    });
+
+    $('#checkout-btn').click(function(e) {
+        // console.log(JSON.parse(localStorage.cartItems));
+        let cartData = JSON.parse(localStorage.cartItems);
+        // console.log(localStorage.cartItems);
+        $.ajax({
+            url: "http://127.0.0.1:8000/api/hello",
+            type: "post",
+            data: {data: [...cartData]},
+            dataType: "json",
+            success: function (response) {
+                console.log('data send success', response);
+            },
+            error: function (xhr, status, error ) {
+                console.log('Error ', error);
+            }
+        });
+    })
+
+}); 
+
+
+$(document).on('click', '#orderbtn', function(event) {
+            event.preventDefault();
+
+            // alert("hi");
+
+            let cart = new Cart();
+            let items = cart.getItems();
+            let order = [];
+
+            items.forEach(e => {
+                let food_id = e.id;
+                let name = e.name;
+                let price = e.price;
+                let qty = e.quantity;
+
+
+                order.push({
+                  food_id: food_id,
+                    name: name,
+                    price: price,
+                    qty: qty
+                })
+                // console.log(order);
+            })
+
+            var user_id = $('#userId').val();
+            let total = cart.getTotalPrice();
+            let status = "pending";
+            // alert(total)
+
+
+            $.ajax({
+                url: "{{ route('order.store') }}",
+                type: 'post',
+                data: {
+                    orders: order,
+                    total: total,
+                    comment: $('#comment').val(),
+                    bAddress: $('#bAddress').val(),
+                    sAddress: $('#sAddress').val(),
+                    user_id: user_id,
+                    status: 'pending',
+
+                },
+                success: function(response) {
+
+                    if (response.status === 'success') {
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: response.message,
+                            showConfirmButton: false,
+                            timer: 1500,
+                            customClass: {
+                                container: 'custom-swal-container',
+                            },
+                        }).then(() => {
+                            cart.emptyCart();
+                            location.reload();
+                        });
+                    }
+
+                },
+                error: function(xhr, status, error) {
+
+                    console.error(xhr.responseText);
+                }
+            });
+          
+          
+          
+          })
+
+
+
+
+</script>
+
+  
 
   @yield('script')
   <!--  sslcommerz ar script file  -->

@@ -20,6 +20,8 @@ return new class extends Migration
             $table->integer("quantity")->unsigned();
             $table->timestamps();
         });
+
+        
     }
 
     /**

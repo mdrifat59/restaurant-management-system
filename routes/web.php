@@ -54,13 +54,16 @@ route::prefix('front')->group(function(){
 Route::get('/menu', [MenuController::class, 'menu']);
 // Route::get('/booking-table', [BookingController::class,'index']);
 Route::get('/chefs', [BookController::class, 'chefs']);
-Route::get('/cart', [BookController::class, 'cart']);
+// Route::get('/cart', [BookController::class, 'cart']);
 // Route::post('/checkout', [BookController::class, 'checkout']);
 
 Route::get('/invoice', [BookController::class, 'invoice']);
 Route::get('/about', [AboutController::class, 'about']);
 Route::get('/events', [EventsController::class, 'events']);
-Route::get('/order', [OrderController::class, 'order']);
+// Route::get('/order', [OrderController::class, 'order']);
+Route::resources([
+    'order' => OrderController::class,
+]);
 // add to cart
 Route::post('/add-to-cart', [CartController::class, 'add_to_cart']);
 Route::get('/delete-cart/{id}', [CartController::class, 'delete']);

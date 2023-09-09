@@ -51,7 +51,7 @@
   <main>
     <section>
       <div class="container">
-        <form action="#" method="POST">
+        <form action="javascript:void(0)" method="POST">
           @csrf
           <div class="row my-3">
             <div class="col-3"></div>
@@ -70,7 +70,7 @@
                         <span class="input-group-text" id="inputGroup-sizing-sm">
                           <i class="fas fa-user"></i>
                         </span>                                                                            
-                        <input type="text" class="form-control" id="name2" placeholder="First Name" value="{{isset(Auth::user()->name) ? Auth::user()->name : ''}}" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required />
+                        <input type="text" class="form-control" id="name2" placeholder="First Name" value="{{isset(Auth::user()->name) ? Auth::user()->name : ''}}" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"   />
                         {{-- <input type="text" class="form-control" id="name2" placeholder="Last Name" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required /> --}}
                       </div>
                     </div>
@@ -82,7 +82,7 @@
                             <span class="input-group-text" id="inputGroup-sizing-sm">
                               <i class="fas fa-envelope"></i>
                             </span>
-                            <input type="email" class="form-control" id="email2" placeholder="someone@example.com" value="{{isset(Auth::user()->email) ? Auth::user()->email : ''}}" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required />
+                            <input type="email" class="form-control" id="email2" placeholder="someone@example.com" value="{{isset(Auth::user()->email) ? Auth::user()->email : ''}}" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"   />
                           </div>
                         </div>
                       </div>
@@ -101,26 +101,29 @@
                     <div class="form-group my-2">
                       <label for="addressOne2">Billing Address</label>
                       <div class="input-group input-group-sm my-1">
-                        <input type="text" class="form-control" name="billing_address" id="addressOne2" placeholder="1234 Main St" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required />
+                        <input type="text" class="form-control" name="billing_address" id="bAddress" placeholder="1234 Main St" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"  />
                       </div>
                     </div>
+
+                    <input id="userId" type="hidden" value="{{$userId}}">
+
                     <div class="form-group my-2">
                       <label for="addressTwo2">Shipping Address</label>
                       <div class="input-group input-group-sm my-1">
-                        <input type="text" class="form-control" name="shipping_address" id="addressTwo2" placeholder="Apartment or Suite" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
+                        <input type="text" class="form-control" name="shipping_address" id="sAddress" placeholder="Apartment or Suite" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
                       </div>
                     </div>
                     <div class="form-group my-2">
                       <label for="addressTwo2"> Comment :</label>
                       <div class="input-group input-group-sm my-1">
                         {{-- <input type="text" class="form-control" name="shipping_address" id="addressTwo2" placeholder="Apartment or Suite" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" /> --}}
-                        <textarea name="comment" id="" cols="40" rows="3" placeholder="comment"></textarea>
+                        <textarea name="comment" id="comment" cols="40" rows="3" placeholder="comment"></textarea>
                       </div>
                     </div>
                     <div class="card mt-5"> 
                       <div class="card-footer">
                         <div class="d-grid">
-                          <button type="submit" class="btn btn-outline-primary" >Place Your Order</button>
+                          <button type="submit" id="orderbtn" class="btn btn-outline-primary" >Place Your Order</button>
                         </div>
                       </div>
                     </div>
@@ -298,76 +301,3 @@
         });
     });
 </script> --}}
-<script>
-    $(document).ready(function(){
-        let c = new Cart();
-        let total = c.getTotalPrice();
-        $("#total").html(total); 
-        $items = "";
-        c.items.forEach(item => {
-            $items += "<tr>";
-                $items += "<td class='text-light'>" + item.id + "</td>";
-                $items += "<td class='text-light'>" + item.name + "</td>";
-                $items += "<td><input class='pq ' type='number' value='" + item.quantity + "'></td>";
-                $items += "<td class='pp text-light'>" + item.price + "</td>";
-                $items += "<td class='pnp text-light'>" + (item.price * item.quantity) + "</td>";
-                $items += "<td class='text-light'> <a class='removeCart' data-pid='" + item.id + "'><i class='bi bi-trash'></i></a> </td>";
-                $items += "</tr>";
-        });   
-        $("#data").html($items);
-        //total amount
-        // console.log($items);
-        function total_amount() {
-                let tm = 0;
-                $.each($(".pnp"), function(i, e) {
-                    tm += Number(e.innerHTML);
-                });
-                $("#total").html(tm);
-            }
-             //change quantity
-             $("#data").on('change', ".pq", function() {
-                let $t = $(this);
-                let q = $t.val();
-                let p = $t.parent().parent().find('.pp').html();
-                //console.log(p);
-                let pnp = q * p;
-                $(this).parent().parent().find('.pnp').html(pnp);
-                total_amount();
-            })
-        $("#data").on("click",'a.removeCart',function(){
-            let cart = new Cart();
-            // talk("Are you sure you want to remove the item?");
-            let c = confirm("Are you sure you want to remove");
-            if(c){
-                let pid = $(this).data("pid");
-                cart.removeItem(pid);
-                $(this).parent().parent().remove();
-                $("#total").html(cart.getTotalPrice());
-                talk("Item removed successfully from your cart");
-            }
-        });
-
-        $('#checkout-btn').click(function(e) {
-            // console.log(JSON.parse(localStorage.cartItems));
-            let cartData = JSON.parse(localStorage.cartItems);
-            // console.log(localStorage.cartItems);
-            $.ajax({
-                url: "http://127.0.0.1:8000/api/hello",
-                type: "post",
-                data: {data: [...cartData]},
-                dataType: "json",
-                success: function (response) {
-                    console.log('data send success', response);
-                },
-                error: function (xhr, status, error ) {
-                    console.log('Error ', error);
-                }
-            });
-        })
-    }); 
-
-
-    
-
-
-</script>

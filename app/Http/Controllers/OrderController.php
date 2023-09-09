@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\OrderDetail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
@@ -12,7 +14,29 @@ class OrderController extends Controller
      */
     public function index()
     {
-        return view ('order');
+
+        if (auth()->check()) {
+            $userId = null;
+            $userName = null;
+
+            $user = Auth::user();
+
+            if ($user) {
+                $userId = $user->id;
+                $userName = $user->name;
+                $userEmail = $user->email;
+            }
+
+            return view('cart', [
+                'userId' => $userId,
+                'userName' => $userName,
+                'userEmail' => $userEmail
+            ]);
+        }
+
+        return redirect()->route('register');
+
+      
     }
 
     /**
@@ -28,8 +52,10 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
+        //...... order........
+
         $user_id = $request->input('user_id');
-        $total = $request->input('grandtotal');
+        $total = $request->input('total');
         $status = $request->input('status');
         $billing_address = $request->input('bAddress');
         $shipping_address = $request->input('sAddress');
@@ -44,6 +70,35 @@ class OrderController extends Controller
             'shipping_address' => $shipping_address,
             'comment' => $comment,
         ]);
+
+        //...... order_details........
+
+        if ($order) {
+            $orders = $request->input('orders', []);
+            $details = [];
+
+            foreach ($orders as $row) {
+                $food_id = $row['food_id'];
+                $qty = $row['qty'];
+
+
+                $details[] = [
+                    'order_id' => $order->id,
+                    'food_id' => $food_id,
+                    'quantity' => $qty,
+                ];
+            }
+
+
+            OrderDetail::insert($details);
+        }
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Order created successfully!',
+
+        ]);
+    
     }
 
     /**
