@@ -17,7 +17,8 @@
            @endif 
         @endforeach            
         @endif --}}
-                    <img src=" #" class="img-fluid rounded-start" alt="...">
+                    <img src="{{asset('storage/'.$food->thumbnail)}}" class="img-fluid rounded-start" alt="...">
+                   
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
@@ -28,7 +29,7 @@
                         <a href="javascript:void(0)" type="button" title="add {{$food->name}} to your bag"  class="btn btn-outline-success addCartIcon"  data-pid="{{$food->id}}"
                           data-pname="{{$food->name}}"
                           data-pprice="{{$food->price}}"
-                          data-pamount="1"><i class="bi bi-cart3 cartbadge" id="cartbadge" value="5"></i></a>
+                          data-pamount="1"><i class="bi bi-cart3 cartbadge" id="cartbadge" value="5"></i></a> 
                           {{-- <form action="{{url('add-to-cart')}}" method="POST">
                             @csrf
                             <div class="add-to-cart">

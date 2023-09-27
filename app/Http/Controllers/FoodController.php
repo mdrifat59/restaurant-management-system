@@ -57,15 +57,14 @@ class FoodController extends Controller
     
         // Handle image upload and save the file path to the model
         if ($request->hasFile('thumbnail')) {
-            $imagePath = $request->file('thumbnail')->store('uploads', 'public');
+            $imagePath = $request->file('thumbnail')->store('uploads','public'); 
             $food->thumbnail = $imagePath;
-        }
-    
+        } 
         $food->save();
-    
+
         return redirect()->back()->with('success', 'Food item added successfully.');
         //  Food::create($request->all());
-        // return back()->with('success','store successfull');
+        // return back()->with('success','store successfull'); 
     }
 
     /**

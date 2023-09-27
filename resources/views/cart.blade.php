@@ -51,7 +51,7 @@
   <main>
     <section>
       <div class="container">
-        <form action="javascript:void(0)" method="POST">
+        <form action="{{url('/example2')}}" method="POST">
           @csrf
           <div class="row my-3">
             <div class="col-3"></div>
